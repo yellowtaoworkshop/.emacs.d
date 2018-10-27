@@ -4,13 +4,16 @@
 ;;                      __   ___        ___      ___
 ;; |\/|  /\  |\ |  /\  / _` |__   |\/| |__  |\ |  |
 ;; |  | /~~\ | \| /~~\ \__> |___  |  | |___ | \|  |
+
+(package-initialize)
+
 (when (>= emacs-major-version 24)
     (require 'package)
     (package-initialize)
     (setq package-archives '(
 			     ("melpa-stable" . "http://mirrors.163.com/elpa/melpa-stable/")
 			     ("melpa" . "http://mirrors.163.com/elpa/melpa/")
-			     ("gnu" . "http://mirrors.163.com/elpa/gnu/")))
+			     ("gnu" . "http://mirrors.163.com/elpa/gnu/"))))
 
 ;; cl - Common Lisp Extension
 (require 'cl)
@@ -21,7 +24,7 @@
 			company
 			hungry-delete
 			undo-tree
-			smpooth-scrolling
+			smooth-scrolling
 			popup
 			org-beautify-theme
 			org
