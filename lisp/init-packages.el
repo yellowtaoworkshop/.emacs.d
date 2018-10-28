@@ -5,7 +5,6 @@
 ;; |\/|  /\  |\ |  /\  / _` |__   |\/| |__  |\ |  |
 ;; |  | /~~\ | \| /~~\ \__> |___  |  | |___ | \|  |
 
-(package-initialize)
 
 (when (>= emacs-major-version 24)
     (require 'package)
@@ -89,7 +88,7 @@
 
 
 ;; smartparens enable
-(smartparens-global-mode t)
+(smartparens-global-strict-mode t)
 
 ;; popwin enable
 (require 'popwin)

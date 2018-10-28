@@ -49,7 +49,12 @@
    (quote
     (smooth-scrolling org-beautify-theme org hungry-delete helm evil-surround evil-numbers evil-matchit dash company)))
  '(show-paren-mode t)
- '(size-indication-mode t))
+ '(size-indication-mode t)
+ '(verilog-case-indent 4)
+ '(verilog-indent-level 4)
+ '(verilog-indent-level-behavioral 4)
+ '(verilog-indent-level-declaration 4)
+ '(verilog-indent-level-module 4))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
