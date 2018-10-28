@@ -64,11 +64,3 @@
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-common :foreground "black"))))
  '(company-tooltip-selection ((t (:background "cyan" :foreground "black")))))
 
-(setq auto-save-defaults nil)    ;;关闭自动保存文件
-(setq make-backup-files nil)       ;;关闭自动备份
-
-;;显示行号
-;;(global-linum-mode 1) ; always show line numbers
-;;(setq linum-format "%d |")  ;set format
-
-(setq-default cursor-type 'bar)
