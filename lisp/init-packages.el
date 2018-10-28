@@ -77,7 +77,7 @@
 
 
 ;; make syntax hilight in org file 
-(require 'org)
+;;(require 'org)
 (setq org-src-fontify-natively t)
 
 (require 'hungry-delete)
@@ -85,6 +85,10 @@
 
 ;;turn on auto complete 
 (global-company-mode 1)
+(require 'verilog-mode)
+;; let company support verilog 
+(add-to-list 'company-keywords-alist (cons 'verilog-mode verilog-keywords))
+
 
 
 ;; smartparens enable
