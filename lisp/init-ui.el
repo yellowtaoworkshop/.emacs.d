@@ -9,5 +9,8 @@
 ;; hilight the current line
 (global-hl-line-mode 1)
 
+;; turn off the tool bar
+(tool-bar-mode -1)
+
 ;;
 (provide 'init-ui)

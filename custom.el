@@ -7,7 +7,12 @@
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
- '(company-idle-delay 0.8)
+ '(company-backends
+   (quote
+    ((company-keywords company-dabbrev-code company-abbrev company-etags company-files)
+     company-files company-eclim company-abbrev company-semantic company-capf company-dabbrev)))
+ '(company-files-exclusions nil)
+ '(company-idle-delay 0.3)
  '(company-minimum-prefix-length 3)
  '(custom-enabled-themes (quote (molokai)))
  '(custom-safe-themes
@@ -47,7 +52,7 @@
  '(line-number-mode nil)
  '(package-selected-packages
    (quote
-    (smooth-scrolling org-beautify-theme org hungry-delete helm evil-surround evil-numbers evil-matchit dash company)))
+    (hungry-delete undo-tree smooth-scrolling popup org-beautify-theme org goto-chg evil-surround evil-numbers evil-matchit evil async helm helm-core smartparens popwin)))
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(verilog-case-indent 4)
@@ -64,8 +69,10 @@
  '(default ((t (:family "DejaVu Sans Mono" :foundry "PfEd" :slant normal :weight normal :height 143 :width normal))))
  '(company-preview ((t (:foreground "gray"))))
  '(company-preview-common ((t (:inherit nil :foreground "dim gray"))))
+ '(company-scrollbar-bg ((t (:background "white"))))
+ '(company-scrollbar-fg ((t (:background "gray"))))
  '(company-tooltip ((t (:background "dim gray" :foreground "white"))))
  '(company-tooltip-common ((t (:underline t))))
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-common :foreground "black"))))
- '(company-tooltip-selection ((t (:background "cyan" :foreground "black")))))
+ '(company-tooltip-selection ((t (:background "cyan3" :foreground "black")))))
 

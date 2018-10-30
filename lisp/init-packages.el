@@ -21,6 +21,7 @@
 ;; ...
 (defvar gavin/packages '(
 			company
+			;;auto-complete 
 			hungry-delete
 			undo-tree
 			smooth-scrolling
@@ -84,11 +85,12 @@
 (global-hungry-delete-mode 1)
 
 ;;turn on auto complete 
+(require 'company)
 (global-company-mode 1)
 (require 'verilog-mode)
 ;; let company support verilog 
 (add-to-list 'company-keywords-alist (cons 'verilog-mode verilog-keywords))
-
+;;(ac-config-default)
 
 
 ;; smartparens enable
