@@ -34,10 +34,13 @@
 			evil-matchit
 			evil
 			async
-			swiper
-			counsel
+			;swiper
+			;counsel
                         smartparens
 			popwin
+			;swiper-helm
+			helm
+			helm-core
 			) "default package")
 
 (setq package-selected-packages gavin/packages)
@@ -73,9 +76,7 @@
 
 
 ;;
-(ivy-mode 1)
-(setq ivy-use-virtual-buffers t)
-(setq enable-recursive-minibuffers t)
+(helm-mode 1)
 
 
 ;; make syntax hilight in org file 
