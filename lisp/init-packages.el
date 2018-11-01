@@ -34,9 +34,9 @@
 			evil-matchit
 			evil
 			async
-			helm
-			helm-core
-			smartparens
+			swiper
+			counsel
+                        smartparens
 			popwin
 			) "default package")
 
@@ -73,8 +73,9 @@
 
 
 ;;
-(require 'helm-config)
-(helm-mode 1)
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq enable-recursive-minibuffers t)
 
 
 ;; make syntax hilight in org file 
@@ -95,6 +96,7 @@
 
 ;; smartparens enable
 (smartparens-global-strict-mode t)
+(sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
 
 ;; popwin enable
 (require 'popwin)

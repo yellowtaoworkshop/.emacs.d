@@ -22,13 +22,14 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
 
+;; change the ui
+(require 'init-ui)
+
 ;; Package Management
 (require 'init-packages)
 
 ;;
 (require 'init-better-default)
-;;
-(require 'init-ui)
 
 ;;
 (require 'init-custom-key)
