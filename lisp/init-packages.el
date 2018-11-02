@@ -41,6 +41,7 @@
 			;swiper-helm
 			helm
 			helm-core
+			helm-swoop
 			) "default package")
 
 (setq package-selected-packages gavin/packages)
@@ -77,7 +78,7 @@
 
 ;;
 (helm-mode 1)
-
+(require 'helm-swoop)
 
 ;; make syntax hilight in org file 
 ;;(require 'org)

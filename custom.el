@@ -15,6 +15,12 @@
  '(company-idle-delay 0.3)
  '(company-minimum-prefix-length 3)
  '(custom-enabled-themes (quote (molokai)))
+ '(custom-safe-themes
+   (quote
+    ("e297f54d0dc0575a9271bb0b64dad2c05cff50b510a518f5144925f627bb5832" "c3c0a3702e1d6c0373a0f6a557788dfd49ec9e66e753fb24493579859c8e95ab" default)))
+ '(display-line-numbers-type (quote relative))
+ '(display-time-mode t)
+ '(global-display-line-numbers-mode t)
  '(helm-completing-read-handlers-alist
    (quote
     ((describe-function . helm-completing-read-symbols)
@@ -41,18 +47,12 @@
      (dired-do-symlink . helm-read-file-name-handler-1)
      (dired-do-relsymlink . helm-read-file-name-handler-1)
      (dired-do-hardlink . helm-read-file-name-handler-1))))
- '(custom-safe-themes
-   (quote
-    ("e297f54d0dc0575a9271bb0b64dad2c05cff50b510a518f5144925f627bb5832" "c3c0a3702e1d6c0373a0f6a557788dfd49ec9e66e753fb24493579859c8e95ab" default)))
- '(display-line-numbers-type (quote relative))
- '(display-time-mode t)
- '(global-display-line-numbers-mode t)
  '(ido-mode (quote both) nil (ido))
  '(inhibit-startup-screen t)
  '(line-number-mode nil)
  '(package-selected-packages
    (quote
-    (hungry-delete undo-tree smooth-scrolling popup org-beautify-theme org goto-chg evil-surround evil-numbers evil-matchit evil async swiper martparens popwin)))
+    (helm-swoop company hungry-delete undo-tree smooth-scrolling popup org-beautify-theme org goto-chg evil-surround evil-numbers evil-matchit evil async smartparens popwin helm helm-core)))
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(verilog-case-indent 4)
@@ -74,5 +74,6 @@
  '(company-tooltip ((t (:background "dim gray" :foreground "white"))))
  '(company-tooltip-common ((t (:underline t))))
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-common :foreground "black"))))
- '(company-tooltip-selection ((t (:background "cyan3" :foreground "black")))))
+ '(company-tooltip-selection ((t (:background "cyan3" :foreground "black"))))
+ '(hl-line ((t nil))))
 
