@@ -9,8 +9,8 @@
    ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
  '(company-backends
    (quote
-    ((company-keywords company-dabbrev-code company-abbrev company-etags)
-     company-ispell company-eclim company-abbrev company-semantic company-capf company-dabbrev)))
+    ((company-files company-keywords company-dabbrev-code company-abbrev company-capf company-etags)
+     company-ispell company-eclim company-abbrev company-semantic company-dabbrev)))
  '(company-files-exclusions t)
  '(company-idle-delay 0.3)
  '(company-minimum-prefix-length 3)
@@ -52,7 +52,7 @@
  '(line-number-mode nil)
  '(package-selected-packages
    (quote
-    (helm-swoop company hungry-delete undo-tree smooth-scrolling popup org-beautify-theme org goto-chg evil-surround evil-numbers evil-matchit evil async smartparens popwin helm helm-core)))
+    (yasnippet-snippets company hungry-delete undo-tree smooth-scrolling popup org-beautify-theme org goto-chg evil-surround evil-numbers evil-matchit evil async smartparens popwin helm helm-core helm-swoop expand-region yasnippet)))
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(verilog-case-indent 4)

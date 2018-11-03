@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: uvm_info
+# key: info
+# --
+
+\`uvm_info(get_type_name(), $sformatf("${1:string}"), ${2:$$(yas-choose-value '("UVM_LOW" "UVM_MEDIUM" "UVM_HIGH"))})

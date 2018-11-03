@@ -42,6 +42,8 @@
 			helm
 			helm-core
 			helm-swoop
+			expand-region
+			yasnippet
 			) "default package")
 
 (setq package-selected-packages gavin/packages)
@@ -79,6 +81,9 @@
 ;;
 (helm-mode 1)
 (require 'helm-swoop)
+;;(require 'helm-smex)
+
+
 
 ;; make syntax hilight in org file 
 ;;(require 'org)
@@ -104,6 +109,8 @@
 (require 'popwin)
 (popwin-mode 1)
 
+
+(yas-global-mode 1)
 
 ;; the end of file
 (provide 'init-packages)
