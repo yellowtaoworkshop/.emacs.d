@@ -17,11 +17,9 @@
 ;; cl - Common Lisp Extension
 (require 'cl)
 
-
 ;; ...
 (defvar gavin/packages '(
 			company
-			;;auto-complete 
 			hungry-delete
 			undo-tree
 			smooth-scrolling
@@ -29,21 +27,21 @@
 			org-beautify-theme
 			org
 			goto-chg
-			evil-surround
-			evil-numbers
-			evil-matchit
-			evil
 			async
-			;swiper
-			;counsel
+			spaceline
+			ivy
+			swiper
+			counsel
+			smex 
                         smartparens
 			popwin
-			;swiper-helm
-			helm
-			helm-core
-			helm-swoop
+			highlight-parentheses
+			highlight-numbers
 			expand-region
 			yasnippet
+			use-package
+			diminish
+			org-bullets
 			) "default package")
 
 (setq package-selected-packages gavin/packages)
@@ -60,30 +58,23 @@
     (when (not (package-installed-p pkg))
       (package-install pkg))))
 
-
-;;Evil mode
-(require 'evil)
-(evil-mode 0)
-;; load evil plugin
-(require 'evil-numbers)
-(require 'evil-surround)
-(global-evil-surround-mode 1)
-(require 'evil-matchit)
-(global-evil-matchit-mode 1)
-
-
-;;
 (require 'smooth-scrolling)
 (smooth-scrolling-mode 1)
 (setq smooth-scroll-margin 3)
 
+;;
+(require 'highlight-parentheses)
+(highlight-parentheses-mode t)
 
 ;;
-(helm-mode 1)
-(require 'helm-swoop)
-;;(require 'helm-smex)
+(require 'highlight-numbers)
+(highlight-numbers-mode t)
 
-
+;;
+(use-package ivy
+  :config
+  (setq ivy-use-virtual-buffers t
+            ivy-count-format "%d/%d "))
 
 ;; make syntax hilight in org file 
 ;;(require 'org)
@@ -100,17 +91,30 @@
 (add-to-list 'company-keywords-alist (cons 'verilog-mode verilog-keywords))
 ;;(ac-config-default)
 
-
 ;; smartparens enable
 (smartparens-global-strict-mode t)
 (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
 
-;; popwin enable
-(require 'popwin)
-(popwin-mode 1)
+(use-package highlight-parentheses
+  :ensure t
+  :config
+  (global-highlight-parentheses-mode t))
 
+;; popwin enable
+(use-package popwin
+  :ensure t
+  :config
+  (popwin-mode t)
+  (push '("*undo-tree*" :width 0.3 :position bottom) popwin:special-display-config))
 
 (yas-global-mode 1)
+
+(use-package undo-tree
+  :ensure t
+  :config
+  (global-undo-tree-mode t)
+  (setq undo-tree-visualizer-diff t)
+  (setq undo-tree-visualizer-timestamps t))
 
 ;; the end of file
 (provide 'init-packages)
