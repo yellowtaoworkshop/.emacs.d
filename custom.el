@@ -20,7 +20,7 @@
  '(cua-overwrite-cursor-color "#b58900")
  '(cua-read-only-cursor-color "#859900")
  '(current-language-environment "UTF-8")
- '(custom-enabled-themes (quote (dracula)))
+ '(custom-enabled-themes nil)
  '(custom-safe-themes
    (quote
     ("274fa62b00d732d093fc3f120aca1b31a6bb484492f31081c1814a858e25c72e" "8eafb06bf98f69bfb86f0bfcbe773b44b465d234d4b95ed7fa882c99d365ebfd" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "cd4d1a0656fee24dc062b997f54d6f9b7da8f6dc8053ac858f15820f9a04a679" "f27c3fcfb19bf38892bc6e72d0046af7a1ded81f54435f9d4d09b3bff9c52fc1" "62c81ae32320ceff5228edceeaa6895c029cc8f43c8c98a023f91b5b339d633f" "ef98b560dcbd6af86fbe7fd15d56454f3e6046a3a0abd25314cfaaefd3744a9e" "7d2e7a9a7944fbde74be3e133fc607f59fdbbab798d13bd7a05e38d35ce0db8d" "e297f54d0dc0575a9271bb0b64dad2c05cff50b510a518f5144925f627bb5832" "c3c0a3702e1d6c0373a0f6a557788dfd49ec9e66e753fb24493579859c8e95ab" default)))
@@ -45,7 +45,7 @@
      (package :foreground "#cc7832")
      (deprecated :strike-through "#a9b7c6"))))
  '(fci-rule-color "#eee8d5")
- '(global-display-line-numbers-mode t)
+ '(font-use-system-font t)
  '(helm-completing-read-handlers-alist
    (quote
     ((describe-function . helm-completing-read-symbols)
@@ -102,7 +102,7 @@
  '(magit-diff-use-overlays nil)
  '(package-selected-packages
    (quote
-    (dracula-theme company hungry-delete undo-tree smooth-scrolling popup org-beautify-theme org goto-chg async spaceline ivy swiper counsel smex smartparens popwin highlight-parentheses highlight-numbers helm helm-core helm-swoop expand-region yasnippet)))
+    (markdown-mode company hungry-delete undo-tree smooth-scrolling popup org-beautify-theme org goto-chg async spaceline ivy swiper counsel smex smartparens popwin highlight-parentheses highlight-numbers expand-region yasnippet use-package diminish org-bullets)))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(show-paren-mode t)
@@ -133,7 +133,11 @@
      (340 . "#268fc6")
      (360 . "#268bd2"))))
  '(vc-annotate-very-old-color nil)
+ '(verilog-align-ifelse t)
+ '(verilog-auto-indent-on-newline t)
+ '(verilog-auto-newline nil)
  '(verilog-case-indent 4)
+ '(verilog-cexp-indent 4)
  '(verilog-indent-level 4)
  '(verilog-indent-level-behavioral 4)
  '(verilog-indent-level-declaration 4)
@@ -147,7 +151,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "DejaVu Sans Mono" :foundry "PfEd" :slant normal :weight normal :height 143 :width normal))))
+ '(default ((t (:family "Source Code Pro" :foundry "ADBE" :slant normal :weight normal :height 143 :width normal))))
  '(company-preview ((t (:foreground "gray"))))
  '(company-preview-common ((t (:inherit nil :foreground "dim gray"))))
  '(company-scrollbar-bg ((t (:background "white"))))
@@ -156,6 +160,7 @@
  '(company-tooltip-common ((t (:foreground "hot pink" :underline t))))
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-common :foreground "magenta"))))
  '(company-tooltip-selection ((t (:inherit (quote highlight) :background "white" :foreground "magenta"))))
+ '(cursor ((t (:background "deep pink"))))
  '(hl-line ((t nil)))
  '(org-level-1 ((t (:inherit outline-1 :height 1.5))))
  '(org-level-2 ((t (:inherit outline-2 :height 1.0))))

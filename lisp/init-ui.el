@@ -2,19 +2,21 @@
 ;; set the cursor type to bar
 (setq-default cursor-type 'bar)
 
-(require 'spaceline-config)
-(setq spaceline-window-numbers-unicode t)
-(setq spaceline-workspace-numbers-unicode t)
-(spaceline-emacs-theme)
+;(require 'spaceline-config)
+;(setq spaceline-window-numbers-unicode nil)
+;(setq spaceline-workspace-numbers-unicode nil)
+;(spaceline-emacs-theme)
+
+(powerline-default-theme)
 
 ;; hilight the current line
-(global-hl-line-mode 1)
+(global-hl-line-mode nil)
 
 ;; turn off the tool bar
 (tool-bar-mode -1)
 
 (require 'winum)
-(setq winum-auto-setup-mode-line nil)
+(setq winum-auto-setup-mode-line t)
 (winum-mode)
 
 (require 'diminish)
