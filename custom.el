@@ -99,10 +99,14 @@
  '(ido-mode (quote both) nil (ido))
  '(inhibit-startup-screen t)
  '(line-number-mode nil)
+ '(livedown-autostart t)
+ '(livedown-browser nil)
+ '(livedown-port 1337)
  '(magit-diff-use-overlays nil)
+ '(markdown-command "pandoc --highlight-style zenburn")
  '(package-selected-packages
    (quote
-    (multiple-cursors company hungry-delete undo-tree smooth-scrolling popup org-beautify-theme org goto-chg async spaceline ivy swiper counsel smex smartparens popwin highlight-parentheses highlight-numbers expand-region yasnippet use-package diminish org-bullets)))
+    (markdown company hungry-delete undo-tree smooth-scrolling popup org-beautify-theme org goto-chg async spaceline ivy swiper counsel smex smartparens popwin highlight-parentheses highlight-numbers expand-region yasnippet use-package diminish org-bullets)))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(show-paren-mode t)
@@ -161,6 +165,7 @@
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-common :foreground "magenta"))))
  '(company-tooltip-selection ((t (:inherit (quote highlight) :background "white" :foreground "magenta"))))
  '(cursor ((t (:background "deep pink"))))
+ '(font-lock-comment-face ((t (:foreground "gray"))))
  '(hl-line ((t nil)))
  '(org-level-1 ((t (:inherit outline-1 :height 1.5))))
  '(org-level-2 ((t (:inherit outline-2 :height 1.0))))

@@ -14,6 +14,8 @@
 			     ("melpa" . "http://mirrors.163.com/elpa/melpa/")
 			     ("gnu" . "http://mirrors.163.com/elpa/gnu/"))))
 
+(setq package-check-signature nil)
+
 ;; cl - Common Lisp Extension
 (require 'cl)
 
@@ -116,5 +118,13 @@
   (setq undo-tree-visualizer-diff t)
   (setq undo-tree-visualizer-timestamps t))
 
-;; the end of file
+(use-package markdown-mode 
+  :ensure t
+  :config
+  (setq markdown-fontify-code-blocks-natively t))
+
+(add-to-list 'load-path "~/.emacs.d/elpa/livdedown-20190316.2016/")
+(require 'livedown)
+
+
 (provide 'init-packages)
