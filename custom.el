@@ -106,7 +106,7 @@
  '(markdown-command "pandoc --highlight-style zenburn")
  '(package-selected-packages
    (quote
-    (markdown company hungry-delete undo-tree smooth-scrolling popup org-beautify-theme org goto-chg async spaceline ivy swiper counsel smex smartparens popwin highlight-parentheses highlight-numbers expand-region yasnippet use-package diminish org-bullets)))
+    (markdown-mode company hungry-delete undo-tree smooth-scrolling popup org-beautify-theme org goto-chg async spaceline ivy swiper counsel smex smartparens popwin highlight-parentheses highlight-numbers expand-region yasnippet use-package diminish org-bullets)))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(show-paren-mode t)
