@@ -27,6 +27,8 @@
 ;;
 (require 'init-better-default)
 
+(require 'init-org)
+
 ;;
 (require 'init-custom-key)
 

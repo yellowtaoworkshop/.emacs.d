@@ -123,8 +123,8 @@
   :config
   (setq markdown-fontify-code-blocks-natively t))
 
-(add-to-list 'load-path "~/.emacs.d/elpa/livdedown-20190316.2016/")
-(require 'livedown)
+;(add-to-list 'load-path "~/.emacs.d/elpa/livdedown-20190316.2016/")
+;(require 'livedown)
 
 
 (provide 'init-packages)
