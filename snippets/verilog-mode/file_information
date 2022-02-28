@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: file_information
+# key: fi
+# --
+
+/****************************************************************************
+* File Name     : `(file-name-nondirectory (buffer-file-name))`
+* Description   : ${1:description} 
+* Update Time   : Time-stamp: <>
+* Update Log    : ${2:init_version} 
+* Create By     : `(getenv "USER")`@synopsys.com
+*****************************************************************************/

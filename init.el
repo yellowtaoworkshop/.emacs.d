@@ -30,5 +30,7 @@
 (require 'init-org)
 
 ;;
-(require 'init-custom-key)
+(require 'init-custum-fun)
 
+;;
+(require 'init-custom-key)

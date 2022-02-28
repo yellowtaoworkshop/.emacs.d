@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: for_loop
+# key: for
+# --
+
+for (int ${1:idx_ii} = ${2:mix_val}; $1 < ${3:max_val}; $1++) begin
+    $0
+end 

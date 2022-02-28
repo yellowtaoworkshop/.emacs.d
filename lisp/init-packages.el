@@ -126,5 +126,7 @@
 ;(add-to-list 'load-path "~/.emacs.d/elpa/livdedown-20190316.2016/")
 ;(require 'livedown)
 
+(use-package expand-region
+  :ensure t)
 
 (provide 'init-packages)
