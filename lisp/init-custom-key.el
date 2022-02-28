@@ -18,7 +18,7 @@
   (global-set-key (kbd "C-x C-f") #'counsel-find-file)
   (global-set-key (kbd "C-x b") #'counsel-switch-buffer)
   (global-set-key (kbd "C-h f") #'counsel-describe-function)
-    (global-set-key (kbd "C-h v") #'counsel-describe-variable)
+  (global-set-key (kbd "C-h v") #'counsel-describe-variable)
   (with-eval-after-load 'swiper 
     ;; Change the keybinds to whatever you like :)
     (global-set-key (kbd "M-s") 'swiper)

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: uvm_error
+# key: uerror
+# --
+
+\`uvm_error(${1:msg_id}, $sformatf("${2:error_msg}")) 

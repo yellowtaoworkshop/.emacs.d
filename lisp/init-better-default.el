@@ -13,5 +13,9 @@
 ;; make the selection part can be deleted when insert
 (delete-selection-mode 1)
 
+(add-hook 'before-save-hook 'time-stamp)
+
+(global-auto-revert-mode 1)
+
 ;;
 (provide 'init-better-default)
