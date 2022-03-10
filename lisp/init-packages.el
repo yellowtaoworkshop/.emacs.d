@@ -16,8 +16,7 @@
 
 (setq package-check-signature nil)
 
-;; cl - Common Lisp Extension
-(require 'cl)
+(require 'cl-lib)
 
 ;; ...
 (defvar gavin/packages '(
@@ -35,7 +34,7 @@
 			swiper
 			counsel
 			smex 
-                        smartparens
+      smartparens
 			popwin
 			highlight-parentheses
 			highlight-numbers
@@ -44,12 +43,14 @@
 			use-package
 			diminish
 			org-bullets
+      winum
+      hl-todo
 			) "default package")
 
 (setq package-selected-packages gavin/packages)
 
 (defun gavin/package-installed-p ()
-  (loop for pkg in gavin/packages
+  (cl-loop for pkg in gavin/packages
 	when (not (package-installed-p pkg)) do (return nil)
 	finally (return t)))
 
@@ -129,4 +130,8 @@
 (use-package expand-region
   :ensure t)
 
+(use-package hl-todo
+  :ensure t
+  :hook ((prog-mode . hl-todo-mode)
+         (yaml-mode . hl-todo-mode)))
 (provide 'init-packages)

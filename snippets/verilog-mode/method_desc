@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: method_desc
+# key: m_desc
+# --
+
+// ========${2:$(make-string (string-width yas-text) ?\=)}
+// Name  : ${1:my_method}
+// Desc  : ${2:description}
+// Return: ${3:return_type}
+// ========${2:$(make-string (string-width yas-text) ?\=)}

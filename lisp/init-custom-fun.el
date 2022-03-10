@@ -13,4 +13,4 @@
       (message filename))))
 
 
-(provide 'init-custum-fun)
+(provide 'init-custom-fun)
