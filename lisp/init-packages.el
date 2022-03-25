@@ -51,8 +51,8 @@
 
 (defun gavin/package-installed-p ()
   (cl-loop for pkg in gavin/packages
-	when (not (package-installed-p pkg)) do (return nil)
-	finally (return t)))
+	when (not (package-installed-p pkg)) do (cl-return nil)
+	finally (cl-return t)))
 
 (unless (gavin/package-installed-p)
   (message "Refreshing package database..")

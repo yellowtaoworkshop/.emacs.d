@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: uvm_object_create
+# key: uoc
+# --
+
+${1:uvm_object}${2:_i} = ${3:$1}::type_id::create(${4:"$1$2"});
