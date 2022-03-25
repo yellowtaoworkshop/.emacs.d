@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: implement_extern_function
+# key: ief
+# --
+
+function ${1:void} ${2:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`}::${3:funcion_name}(${4:});
+
+$0
+
+endfunction // $3
