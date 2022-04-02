@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: uvm_object
+# key: classo
+# --
+
+class ${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`} extends ${2:base_class};
+
+      `uvm_object_utils($1)
+
+      function new(string name = "");
+               super.new(name);
+      endfunction // new
+
+endclass // $1
