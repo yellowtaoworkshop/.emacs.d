@@ -1,5 +1,6 @@
 # -*- mode: snippet -*-
 # name: file_guard
+# expand-env: ((yas-indent-line 'fixed))
 # key: guard 
 # --
 

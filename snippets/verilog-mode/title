@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: title
-# key: title
+# key: t0
 # --
 
 //---------------${1:$(make-string (string-width yas-text) ?\-)}---------------

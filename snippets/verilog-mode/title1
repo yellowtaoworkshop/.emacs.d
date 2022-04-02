@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: title1
+# key: t1
+# --
+
+// ---- ${1:comments_here}

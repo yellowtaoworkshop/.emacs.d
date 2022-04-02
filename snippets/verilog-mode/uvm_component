@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: uvm_component
+# key: classc
+# --
+
+class ${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`} extends ${2:base_class};
+
+      `uvm_component_utils($1)
+
+      function new(string name, uvm_component parent);
+               super.new(name, parent);
+      endfunction // new
+
+endclass // $1
