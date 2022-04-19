@@ -29,7 +29,6 @@
 			org
 			goto-chg
 			async
-			spaceline
 			ivy
 			swiper
 			counsel
@@ -45,6 +44,8 @@
 			org-bullets
       winum
       hl-todo
+      doom-modeline
+      solarized-theme 
 			) "default package")
 
 (setq package-selected-packages gavin/packages)
@@ -77,7 +78,7 @@
 (use-package ivy
   :config
   (setq ivy-use-virtual-buffers t
-            ivy-count-format "%d/%d "))
+        ivy-count-format "%d/%d "))
 
 ;; make syntax hilight in org file 
 ;;(require 'org)
@@ -134,4 +135,43 @@
   :ensure t
   :hook ((prog-mode . hl-todo-mode)
          (yaml-mode . hl-todo-mode)))
+
+;(use-package tree-sitter
+;  :ensure t)
+
+;(use-package tree-sitter-langs
+;  :ensure t)
+
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode t))
+
+(use-package all-the-icons
+  :ensure t)
+
+(use-package all-the-icons-dired
+  :ensure t
+  :hook ((dired-mode . all-the-icons-dired-mode)))
+
+(use-package all-the-icons-ibuffer
+  :ensure t
+  :init (all-the-icons-ibuffer-mode t))
+
+(use-package all-the-icons-completion
+  :ensure t
+  :init (all-the-icons-completion-mode))
+
+(use-package all-the-icons-ivy-rich
+  :ensure t
+  :init (all-the-icons-ivy-rich-mode t))
+
+(use-package ivy-rich
+  :ensure t
+  :init (ivy-rich-mode t))
+
+
+
+
+
 (provide 'init-packages)
+
