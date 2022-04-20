@@ -74,11 +74,7 @@
 (require 'highlight-numbers)
 (highlight-numbers-mode t)
 
-;;
-(use-package ivy
-  :config
-  (setq ivy-use-virtual-buffers t
-        ivy-count-format "%d/%d "))
+
 
 ;; make syntax hilight in org file 
 ;;(require 'org)
@@ -163,14 +159,23 @@
 
 (use-package all-the-icons-ivy-rich
   :ensure t
-  :init (all-the-icons-ivy-rich-mode t))
+  ;;  :init (all-the-icons-ivy-rich-mode t)
+  )
 
 (use-package ivy-rich
   :ensure t
-  :init (ivy-rich-mode t))
+  ;;  :init (ivy-rich-mode t)
+  )
 
+(use-package all-the-icons-ivy
+  :ensure t
+  :init (add-hook 'after-init-hook 'all-the-icons-ivy-setup))
 
-
+;;
+(use-package ivy
+  :config
+  (setq ivy-use-virtual-buffers t
+        ivy-count-format "%d/%d "))
 
 
 (provide 'init-packages)
