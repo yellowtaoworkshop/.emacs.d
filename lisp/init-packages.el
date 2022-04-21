@@ -29,7 +29,6 @@
 			org
 			goto-chg
 			async
-			spaceline
 			ivy
 			swiper
 			counsel
@@ -45,6 +44,7 @@
 			org-bullets
       winum
       hl-todo
+      doom-modeline
 			) "default package")
 
 (setq package-selected-packages gavin/packages)
@@ -73,11 +73,7 @@
 (require 'highlight-numbers)
 (highlight-numbers-mode t)
 
-;;
-(use-package ivy
-  :config
-  (setq ivy-use-virtual-buffers t
-            ivy-count-format "%d/%d "))
+
 
 ;; make syntax hilight in org file 
 ;;(require 'org)
@@ -97,6 +93,8 @@
 ;; smartparens enable
 (smartparens-global-strict-mode t)
 (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
+(sp-local-pair 'verilog-mode    "'" nil :actions nil)
+(sp-local-pair 'verilog-mode    "`" nil :actions nil)
 
 (use-package highlight-parentheses
   :ensure t
@@ -124,7 +122,7 @@
   :config
   (setq markdown-fontify-code-blocks-natively t))
 
-;(add-to-list 'load-path "~/.emacs.d/elpa/livdedown-20190316.2016/")
+;;(add-to-list 'load-path "~/.emacs.d/elpa/livdedown-20190316.2016/")
 ;(require 'livedown)
 
 (use-package expand-region
@@ -134,4 +132,38 @@
   :ensure t
   :hook ((prog-mode . hl-todo-mode)
          (yaml-mode . hl-todo-mode)))
+
+(use-package doom-modeline
+  :ensure t
+  :hook (after-init . doom-modeline-mode)
+  :config
+  (setq inhibit-compacting-font-caches t))
+
+(use-package all-the-icons-ibuffer
+  :ensure t
+  :init (all-the-icons-ibuffer-mode t))
+
+(use-package all-the-icons-completion
+  :ensure t
+  :init (all-the-icons-completion-mode t))
+
+(use-package all-the-icons-ivy-rich
+  :ensure t
+  ;;  :init (all-the-icons-ivy-rich-mode t)
+  )
+
+(use-package all-the-icons-ivy
+  :ensure t
+  :init (add-hook 'after-init-hook 'all-the-icons-ivy-setup))
+;;
+(use-package ivy
+  :config
+  (setq ivy-use-virtual-buffers t
+        ivy-count-format "%d/%d "))
+
+(use-package ivy-rich
+  :ensure t
+  ;; :init (ivy-rich-mode t)
+  )
+
 (provide 'init-packages)
