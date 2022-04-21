@@ -2,6 +2,7 @@
 # name: uvm_object
 # key: classo
 # --
+typedef class $2;
 
 class ${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`} extends ${2:base_class};
 
@@ -11,4 +12,6 @@ class ${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name))
                super.new(name);
       endfunction // new
 
+      $0
+      
 endclass // $1

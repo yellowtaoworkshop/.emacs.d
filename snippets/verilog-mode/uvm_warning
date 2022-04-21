@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: uvm_fatal
-# key: ufatal
+# name: uvm_warning
+# key: uwarning
 # --
 
 \`uvm_fatal(${1:msg_id}, $sformatf(${2:string}))

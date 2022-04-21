@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: implememt_extern_constarint
+# expand-env: ((yas-indent-line 'fixed))
+# key: iec
+# --
+
+// ========${3:$(make-string (string-width yas-text) ?\=)}${1:$(make-string (string-width yas-text) ?\=)}
+// Name  : ${1:constraint_name}
+// Desc  : ${2:description}
+// ========${3:$(make-string (string-width yas-text) ?\=)}${1:$(make-string (string-width yas-text) ?\=)}
+constraint ${3:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`}::$1{
+  $0
+};

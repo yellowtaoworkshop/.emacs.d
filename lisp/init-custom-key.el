@@ -54,4 +54,7 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
 
+;;buffer management
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
 (provide 'init-custom-key)
