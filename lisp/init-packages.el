@@ -138,6 +138,18 @@
   :hook (after-init . doom-modeline-mode)
   :config
   (setq inhibit-compacting-font-caches t))
+;(use-package tree-sitter
+;  :ensure t)
+
+;(use-package tree-sitter-langs
+;  :ensure t)
+
+(use-package all-the-icons
+  :ensure t)
+
+(use-package all-the-icons-dired
+  :ensure t
+  :hook ((dired-mode . all-the-icons-dired-mode)))
 
 (use-package all-the-icons-ibuffer
   :ensure t
@@ -147,23 +159,25 @@
   :ensure t
   :init (all-the-icons-completion-mode t))
 
+(use-package all-the-icons-ivy
+  :ensure t
+  :init (add-hook 'after-init-hook 'all-the-icons-ivy-setup))
+
 (use-package all-the-icons-ivy-rich
   :ensure t
   ;;  :init (all-the-icons-ivy-rich-mode t)
   )
 
-(use-package all-the-icons-ivy
+(use-package ivy-rich
   :ensure t
-  :init (add-hook 'after-init-hook 'all-the-icons-ivy-setup))
+  ;;  :init (ivy-rich-mode t)
+  )
+
 ;;
 (use-package ivy
   :config
   (setq ivy-use-virtual-buffers t
         ivy-count-format "%d/%d "))
 
-(use-package ivy-rich
-  :ensure t
-  ;; :init (ivy-rich-mode t)
-  )
-
 (provide 'init-packages)
+

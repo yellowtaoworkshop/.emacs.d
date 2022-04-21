@@ -4,6 +4,7 @@
 (global-set-key (kbd "M-2") 'split-window-below)
 (global-set-key (kbd "M-3") 'split-window-right)
 
+
 ;; realize C-a/C-x in vim
 ;;(with-eval-after-load 'evil-numbers
 ;;  (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
@@ -29,7 +30,6 @@
     ;; From helm-swoop to helm-multi-swoop-all
     ))
 
-
 (with-eval-after-load 'company
   (define-key company-active-map (kbd "C-n") 'company-select-next)
   (define-key company-active-map (kbd "C-p") 'company-select-previous)
@@ -54,7 +54,7 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
 
-;;buffer management
+;; buffer manager
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 (provide 'init-custom-key)

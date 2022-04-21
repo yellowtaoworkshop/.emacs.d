@@ -7,10 +7,6 @@
 ;(setq spaceline-workspace-numbers-unicode nil)
 ;(spaceline-emacs-theme)
 
-;(powerline-default-theme)
-
-(add-hook 'after-init-hook #'doom-modeline-mode)
-
 ;; hilight the current line
 (global-hl-line-mode nil)
 
@@ -28,6 +24,8 @@
 (diminish 'company-mode "ac")
 (diminish 'smartparens-mode "sp")
 
+;(add-hook 'verilog-mode-hook #'tree-sitter-mode)
+;(add-hook 'verilog-mode-hook #'tree-sitter-hl-mode)
 
 ;;
 (provide 'init-ui)

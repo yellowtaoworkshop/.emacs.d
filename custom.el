@@ -153,6 +153,7 @@
  '(verilog-indent-level-behavioral 2)
  '(verilog-indent-level-declaration 2)
  '(verilog-indent-level-module 2)
+ '(warning-suppress-types '((comp)))
  '(weechat-color-list
    '(unspecified "#fdf6e3" "#eee8d5" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#657b83" "#839496"))
  '(xterm-color-names
