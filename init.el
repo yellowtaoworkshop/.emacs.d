@@ -17,6 +17,8 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
 
+(setq package-native-compile t)
+
 ;; Package Management
 (require 'init-packages)
 
