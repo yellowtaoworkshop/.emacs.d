@@ -3,11 +3,11 @@
 # key: ief
 # --
 
-// ========${3:$(make-string (string-width yas-text) ?\=)}${4:$(make-string (string-width yas-text) ?\=)}${1:$(make-string (string-width yas-text) ?\=)}${5:$(make-string (string-width yas-text) ?\=)}
+// ====================================================================================================
 // Name  : ${1:functiona_name}
 // Desc  : ${2:description}
 // Return: ${3:void}
-// ========${3:$(make-string (string-width yas-text) ?\=)}${4:$(make-string (string-width yas-text) ?\=)}${1:$(make-string (string-width yas-text) ?\=)}${5:$(make-string (string-width yas-text) ?\=)}
+// ====================================================================================================
 function $3 ${4:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`}::$1(${5:});
 
 $0

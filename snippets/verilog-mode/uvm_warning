@@ -3,4 +3,4 @@
 # key: uwarning
 # --
 
-\`uvm_fatal(${1:msg_id}, $sformatf(${2:string}))
+\`uvm_warning(${1:msg_id}, $sformatf(${2:string}))

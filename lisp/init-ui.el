@@ -27,5 +27,7 @@
 ;(add-hook 'verilog-mode-hook #'tree-sitter-mode)
 ;(add-hook 'verilog-mode-hook #'tree-sitter-hl-mode)
 
+(set-background-color "#C7EDCC")
+
 ;;
 (provide 'init-ui)
