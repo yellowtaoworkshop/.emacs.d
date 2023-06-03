@@ -119,18 +119,20 @@
 
 (use-package yasnippet
   :ensure t
-  :config
-  (yas-global-mode 1))
+  :hook ((prog-mode . yas-global-mode)
+         )
+  )
 
 (use-package undo-tree
   :ensure t
+  :bind (("C-x u" . global-undo-tree-mode))
   :config
-  (global-undo-tree-mode t)
   (setq undo-tree-visualizer-diff t)
   (setq undo-tree-visualizer-timestamps t))
 
 (use-package markdown-mode 
   :ensure t
+  :defer t
   :config
   (setq markdown-fontify-code-blocks-natively t))
 
@@ -140,7 +142,8 @@
 (use-package hl-todo
   :ensure t
   :hook ((prog-mode . hl-todo-mode)
-         (yaml-mode . hl-todo-mode)))
+         (yaml-mode . hl-todo-mode))
+  )
 
 (use-package doom-modeline
   :ensure t
@@ -148,37 +151,39 @@
   :config
   (setq inhibit-compacting-font-caches t))
 
-(use-package all-the-icons
+(use-package nerd-icons
   :ensure t)
 
-(use-package all-the-icons-dired
+(use-package nerd-icons-dired
   :ensure t
-  :hook ((dired-mode . all-the-icons-dired-mode)))
+  :hook ((dired-mode . nerd-icons-dired-mode)))
 
-(use-package all-the-icons-ibuffer
+(use-package nerd-icons-ibuffer
   :ensure t
-  :init (all-the-icons-ibuffer-mode t))
+  :hook ((ibuffer-mode . nerd-icons-ibuffer-mode)))
 
-(use-package all-the-icons-completion
+(use-package nerd-icons-completion
   :ensure t
-  :init (all-the-icons-completion-mode t))
+  :hook ((company-mode . nerd-icons-completion-mode)))
 
-(use-package all-the-icons-ivy
-  :ensure t
-  :init (add-hook 'after-init-hook 'all-the-icons-ivy-setup))
+;;(use-package nerd-icons-ivy
+;;  :ensure t
+;;  :init (add-hook 'after-init-hook 'nerd-icons-ivy-setup))
 
-(use-package all-the-icons-ivy-rich
+(use-package nerd-icons-ivy-rich
   :ensure t
-  ;;  :init (all-the-icons-ivy-rich-mode t)
+  ;;  :hook ((ivy-rich-mode . nerd-icons-ivy-rich-mode))
   )
 
 (use-package ivy-rich
   :ensure t
-  ;;  :init (ivy-rich-mode t)
+  :hook (ivy-mode . ivy-rich-mode)
   )
+  
 
 ;;
 (use-package ivy
+  :hook ((after-init . ivy-mode))
   :config
   (setq ivy-use-virtual-buffers t
         ivy-count-format "%d/%d "))
@@ -191,4 +196,3 @@
   :ensure t)
 
 (provide 'init-packages)
-

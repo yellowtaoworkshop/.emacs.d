@@ -178,13 +178,14 @@
  '(lsp-ui-doc-border "#586e75")
  '(magit-diff-use-overlays nil)
  '(markdown-command "pandoc --highlight-style zenburn")
+ '(nerd-icons-font-family "Hack Nerd Font Mono")
  '(nrepl-message-colors
    '("#dc322f" "#cb4b16" "#b58900" "#5b7300" "#b3c34d" "#0061a8" "#2aa198" "#d33682" "#6c71c4"))
  '(org-agenda-files
    '("~/Documents/Org/workGtd.org" "~/Documents/Org/learnGtd.org"))
  '(package-native-compile t)
  '(package-selected-packages
-   '(highlight-number highlight-highlight vterm vterm-toggle verilog-ext moe-theme all-the-icons doom-themes base16-theme all-the-icons-completion all-the-icons-dired all-the-icons-gnus all-the-icons-ibuffer all-the-icons-ivy all-the-icons-ivy-rich doom-modeline monokai-theme zenburn-theme hl-todo solarized-theme winum markdown-mode excorporate company hungry-delete undo-tree smooth-scrolling popup org-beautify-theme org goto-chg async ivy swiper counsel smex smartparens popwin highlight-parentheses highlight-numbers expand-region yasnippet use-package diminish org-bullets))
+   '(nerd-icons-ivy company hungry-delete undo-tree smooth-scrolling popup org-beautify-theme org goto-chg async ivy swiper counsel smex smartparens popwin highlight-parentheses highlight-numbers expand-region yasnippet use-package diminish org-bullets winum hl-todo doom-modeline))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(size-indication-mode t)
