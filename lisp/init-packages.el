@@ -61,40 +61,49 @@
     (when (not (package-installed-p pkg))
       (package-install pkg))))
 
-(require 'smooth-scrolling)
-(smooth-scrolling-mode 1)
-(setq smooth-scroll-margin 3)
+(use-package smooth-scrolling
+  :ensure t
+  :init
+  :config
+  (smooth-scrolling-mode t)
+  (setq smooth-scroll-margin 3))
 
 ;;
-(require 'highlight-parentheses)
-(highlight-parentheses-mode t)
+(use-package highlight-parentheses
+  :ensure t
+  :config
+  (highlight-parentheses-mode t))
 
 ;;
-(require 'highlight-numbers)
-(highlight-numbers-mode t)
+(use-package highlight-numbers
+  :ensure t
+  :config
+  (highlight-numbers-mode t))
 
+(use-package hungry-delete
+  :ensure t
+  :config
+  (global-hungry-delete-mode 1))
 
-
-;; make syntax hilight in org file 
-;;(require 'org)
-(setq org-src-fontify-natively t)
-
-(require 'hungry-delete)
-(global-hungry-delete-mode 1)
+(use-package verilog-mode
+  :ensure t)
 
 ;;turn on auto complete 
-(require 'company)
-(global-company-mode 1)
-(require 'verilog-mode)
-;; let company support verilog 
-(add-to-list 'company-keywords-alist (cons 'verilog-mode verilog-keywords))
-;;(ac-config-default)
+(use-package company
+  :ensure t
+  :config
+  (global-company-mode 1)
+  ;; let company support verilog 
+  (add-to-list 'company-keywords-alist (cons 'verilog-mode verilog-keywords)))
 
 ;; smartparens enable
-(smartparens-global-strict-mode t)
-(sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
-(sp-local-pair 'verilog-mode    "'" nil :actions nil)
-(sp-local-pair 'verilog-mode    "`" nil :actions nil)
+(use-package smartparens
+  :ensure t
+  :config
+  (smartparens-global-strict-mode t)
+  (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
+  (sp-local-pair 'verilog-mode    "'" nil :actions nil)
+  (sp-local-pair 'verilog-mode    "`" nil :actions nil))
 
 (use-package highlight-parentheses
   :ensure t
@@ -108,7 +117,10 @@
   (popwin-mode t)
   (push '("*undo-tree*" :width 0.3 :position bottom) popwin:special-display-config))
 
-(yas-global-mode 1)
+(use-package yasnippet
+  :ensure t
+  :config
+  (yas-global-mode 1))
 
 (use-package undo-tree
   :ensure t
@@ -121,9 +133,6 @@
   :ensure t
   :config
   (setq markdown-fontify-code-blocks-natively t))
-
-;;(add-to-list 'load-path "~/.emacs.d/elpa/livdedown-20190316.2016/")
-;(require 'livedown)
 
 (use-package expand-region
   :ensure t)
@@ -138,11 +147,6 @@
   :hook (after-init . doom-modeline-mode)
   :config
   (setq inhibit-compacting-font-caches t))
-;(use-package tree-sitter
-;  :ensure t)
-
-;(use-package tree-sitter-langs
-;  :ensure t)
 
 (use-package all-the-icons
   :ensure t)
@@ -178,6 +182,13 @@
   :config
   (setq ivy-use-virtual-buffers t
         ivy-count-format "%d/%d "))
+
+;;
+(use-package vterm
+  :ensure t)
+
+(use-package vterm-toggle
+  :ensure t)
 
 (provide 'init-packages)
 

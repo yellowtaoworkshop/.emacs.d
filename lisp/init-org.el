@@ -41,5 +41,9 @@
 	("ld" "for daily learning" entry (file+headline "~/Documents/Org/learnGtd.org" "Daily Learning Tasks")
 	 "** TODO %? [/]\n   - [ ] ")))
 
+;; make syntax hilight in org file 
+;;(require 'org)
+(setq org-src-fontify-natively t)
+
 (provide 'init-org)
 
