@@ -9,7 +9,5 @@
 // Return: ${3:void}
 // ====================================================================================================
 function $3 ${4:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`}::$1(${5:});
-
-$0
-
+  $0
 endfunction // $1
