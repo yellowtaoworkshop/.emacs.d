@@ -45,6 +45,7 @@
       winum
       hl-todo
       doom-modeline
+      vterm
 			) "default package")
 
 (setq package-selected-packages gavin/packages)
@@ -182,7 +183,37 @@
   (setq ivy-use-virtual-buffers t
         ivy-count-format "%d/%d "))
 
-;;
+(use-package projectile
+  :ensure t
+  :init (projectile-mode 1))
+
+;(use-package lsp-mode
+;  :init
+;  ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
+;  (setq lsp-keymap-prefix "C-c l")
+;  :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
+;         (verilog-mode . lsp)
+;         ;; if you want which-key integration
+;         (lsp-mode . lsp-enable-which-key-integration))
+;  :commands lsp)
+;
+;; if you are ivy user
+;(use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
+;(use-package lsp-treemacs :commands lsp-treemacs-errors-list)
+;(use-package lsp-ui :commands lsp-ui-mode)
+;
+;
+;(require 'lsp-verilog)
+;
+;(custom-set-variables
+;  '(lsp-clients-svlangserver-launchConfiguration "/global/apps/vcs_2021.09-SP2/bin/vlogan -sverilog +lint +warn")
+;  ;'(lsp-clients-svlangserver-formatCommand "/tools/verible-verilog-format")
+;  )
+
+;(add-hook 'verilog-mode-hook #'lsp-deferred)
+(use-package p4
+  :ensure t)
+
 (use-package vterm
   :ensure t
   :defer t)
