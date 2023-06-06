@@ -64,29 +64,25 @@
 (use-package smooth-scrolling
   :ensure t
   :init
-  :config
-  (smooth-scrolling-mode t)
-  (setq smooth-scroll-margin 3))
+  (setq smooth-scroll-margin 3)
+  :hook ((after-init . smooth-scrolling-mode)))
 
 ;;
 (use-package highlight-parentheses
   :ensure t
-  :config
-  (highlight-parentheses-mode t))
+  :hook ((after-init . highlight-parentheses-mode)))
 
 ;;
 (use-package highlight-numbers
   :ensure t
-  :config
-  (highlight-numbers-mode t))
+  :hook ((prog-mode . highlight-numbers-mode)))
 
 (use-package hungry-delete
   :ensure t
-  :config
-  (global-hungry-delete-mode 1))
+  :hook ((after-init . global-hungry-delete-mode)))
 
 (use-package verilog-mode
-  :ensure t)
+  :ensure t) 
 
 ;;turn on auto complete 
 (use-package company
@@ -125,7 +121,7 @@
 
 (use-package undo-tree
   :ensure t
-  :bind (("C-x u" . global-undo-tree-mode))
+  :hook ((after-init . global-undo-tree-mode))
   :config
   (setq undo-tree-visualizer-diff t)
   (setq undo-tree-visualizer-timestamps t))
@@ -168,18 +164,16 @@
 
 ;;(use-package nerd-icons-ivy
 ;;  :ensure t
-;;  :init (add-hook 'after-init-hook 'nerd-icons-ivy-setup))
+;;  :hook ((after-init . nerd-icons-ivy-setup)))
 
 (use-package nerd-icons-ivy-rich
   :ensure t
-  ;;  :hook ((ivy-rich-mode . nerd-icons-ivy-rich-mode))
+  :hook ((ivy-mode . nerd-icons-ivy-rich-mode))
   )
 
 (use-package ivy-rich
   :ensure t
-  :hook (ivy-mode . ivy-rich-mode)
-  )
-  
+  :hook (nerd-icons-ivy-rich-mode . ivy-rich-mode))
 
 ;;
 (use-package ivy
@@ -190,9 +184,11 @@
 
 ;;
 (use-package vterm
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package vterm-toggle
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (provide 'init-packages)
