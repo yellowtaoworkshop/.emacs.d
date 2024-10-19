@@ -265,6 +265,7 @@
  '(tool-bar-mode nil)
  '(undo-tree-auto-save-history nil)
  '(use-file-dialog nil)
+ '(use-package-minimum-reported-time 0.001)
  '(use-package-verbose t)
  '(vc-annotate-background nil)
  '(vc-annotate-background-mode nil)
