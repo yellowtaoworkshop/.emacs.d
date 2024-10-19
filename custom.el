@@ -223,12 +223,19 @@
  '(ido-mode 'both nil (ido))
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
- '(line-number-mode nil)
+ '(line-number-mode t)
+ '(large-file-warning-threshold 50000000)
  '(livedown-autostart t)
  '(livedown-browser nil)
  '(livedown-port 1337)
+ '(lsp-clients-svlangserver-disableCompletionProvider t)
+ '(lsp-clients-svlangserver-formatCommand "/tools/verible-verilog-format")
+ '(lsp-clients-svlangserver-launchConfiguration
+   "/global/apps/vcs_2021.09-SP2/bin/vlogan -sverilog +lint +warn")
+ '(lsp-clients-svlangserver-workspace-additional-dirs ["~/UVM"])
  '(lsp-ui-doc-border "#586e75")
  '(magit-diff-use-overlays nil)
+ '(major-mode 'text-mode)
  '(markdown-command "pandoc --highlight-style zenburn")
  '(nerd-icons-font-family "Hack Nerd Font Mono")
  '(nrepl-message-colors
@@ -238,13 +245,7 @@
    '("~/Documents/Org/workGtd.org" "~/Documents/Org/learnGtd.org"))
  '(package-native-compile t)
  '(package-selected-packages
-   '(async company counsel diminish doom-modeline expand-region goto-chg
-           highlight-numbers highlight-parentheses hl-todo
-           hungry-delete markdown-mode moe-theme nerd-icons-completion
-           nerd-icons-dired nerd-icons-ibuffer nerd-icons-ivy-rich
-           org-beautify-theme org-bullets popup popwin smartparens
-           smex smooth-scrolling undo-tree vterm-toggle winum
-           yasnippet))
+   '(vterm-toggle p4 projectile all-the-icons-ivy all-the-icons-completion all-the-icons-ibuffer all-the-icons-dired all-the-icons markdown-mode verilog-ext verilog-ts-mode leuven-theme tree-sitter-langs treesit-auto pdf-tools pdf-view-pagemark pdf-view-restore lua-mode consult-eglot company hungry-delete undo-tree smooth-scrolling popup org-beautify-theme org goto-chg async ivy swiper counsel smex smartparens popwin highlight-parentheses highlight-numbers expand-region yasnippet use-package diminish org-bullets winum hl-todo doom-modeline vterm))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(size-indication-mode t)
@@ -258,12 +259,12 @@
                '("~/TAGS" "$WA/TAGS")
                )
    )
+ '(tags-revert-without-query t)
  '(term-default-bg-color "#fdf6e3")
  '(term-default-fg-color "#657b83")
  '(tool-bar-mode nil)
  '(undo-tree-auto-save-history nil)
  '(use-file-dialog nil)
- '(use-package-minimum-reported-time 0.001)
  '(use-package-verbose t)
  '(vc-annotate-background nil)
  '(vc-annotate-background-mode nil)
@@ -277,6 +278,7 @@
  '(vc-annotate-very-old-color nil)
  '(verilog-align-ifelse nil)
  '(verilog-auto-indent-on-newline t)
+ '(verilog-auto-inst-interfaced-ports t)
  '(verilog-auto-newline nil)
  '(verilog-case-indent 2)
  '(verilog-cexp-indent 2)

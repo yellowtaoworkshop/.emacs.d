@@ -35,3 +35,4 @@
 
 ;;
 (require 'init-custom-key)
+(put 'downcase-region 'disabled nil)

@@ -83,15 +83,22 @@
   :hook ((after-init . global-hungry-delete-mode)))
 
 (use-package verilog-mode
-  :ensure t) 
+  :defer t
+  :ensure t
+  :after
+  (company-keywords)
+  :config
+  (add-to-list 'company-keywords-alist (cons 'verilog-mode verilog-keywords)))
 
 ;;turn on auto complete 
 (use-package company
   :ensure t
-  :config
-  (global-company-mode 1)
-  ;; let company support verilog 
-  (add-to-list 'company-keywords-alist (cons 'verilog-mode verilog-keywords)))
+  :hook
+  (prog-mode . company-mode)
+    ;; let company support verilog
+  ;;:config
+  ;;(add-to-list 'company-keywords-alist (cons 'verilog-mode verilog-keywords))
+  )
 
 ;; smartparens enable
 (use-package smartparens
@@ -112,7 +119,8 @@
   :ensure t
   :config
   (popwin-mode t)
-  (push '("*undo-tree*" :width 0.3 :position bottom) popwin:special-display-config))
+  ;;(push '("*undo-tree*" :width 0.3 :position bottom) popwin:special-display-config)
+  )
 
 (use-package yasnippet
   :ensure t
@@ -124,7 +132,7 @@
   :ensure t
   :hook ((after-init . global-undo-tree-mode))
   :config
-  (setq undo-tree-visualizer-diff t)
+  ;;(setq undo-tree-visualizer-diff t)
   (setq undo-tree-visualizer-timestamps t))
 
 (use-package markdown-mode 
@@ -148,33 +156,34 @@
   :config
   (setq inhibit-compacting-font-caches t))
 
-(use-package nerd-icons
+(use-package all-the-icons
   :ensure t)
 
-(use-package nerd-icons-dired
+(use-package all-the-icons-dired
   :ensure t
-  :hook ((dired-mode . nerd-icons-dired-mode)))
+  :hook ((dired-mode . all-the-icons-dired-mode)))
 
-(use-package nerd-icons-ibuffer
+(use-package all-the-icons-ibuffer
   :ensure t
-  :hook ((ibuffer-mode . nerd-icons-ibuffer-mode)))
+  :hook ((ibuffer-mode . all-the-icons-ibuffer-mode)))
 
-(use-package nerd-icons-completion
+(use-package all-the-icons-completion
   :ensure t
-  :hook ((company-mode . nerd-icons-completion-mode)))
+  :hook ((company-mode . all-the-icons-completion-mode)))
 
-;;(use-package nerd-icons-ivy
+(use-package all-the-icons-ivy
+  :ensure t
+  :init (add-hook 'after-init-hook 'all-the-icons-ivy-setup))
+
+;;(use-package all-the-icons-ivy-rich
 ;;  :ensure t
-;;  :hook ((after-init . nerd-icons-ivy-setup)))
+;;  :hook ((ivy-mode . all-the-icons-ivy-rich-mode))
+;;  )
 
-(use-package nerd-icons-ivy-rich
-  :ensure t
-  :hook ((ivy-mode . nerd-icons-ivy-rich-mode))
-  )
-
-(use-package ivy-rich
-  :ensure t
-  :hook (nerd-icons-ivy-rich-mode . ivy-rich-mode))
+;;(use-package ivy-rich
+;;  :ensure t
+;;  :hook (ivy-mode . ivy-rich-mode)
+;;  )
 
 ;;
 (use-package ivy
@@ -215,11 +224,43 @@
   :ensure t)
 
 (use-package vterm
-  :ensure t
-  :defer t)
+  :defer t
+  :ensure t)
 
 (use-package vterm-toggle
-  :ensure t
-  :defer t)
+  :defer t
+  :ensure t)
+
+;;(use-package verilog-ext
+;;  :after verilog-mode
+;;  :demand
+;;  :hook ((verilog-mode . verilog-ext-mode))
+;;  :init
+;;   ;; Can also be set through `M-x RET customize-group RET verilog-ext':
+;;   ;;  - Verilog Ext Feature List (provides info of different features)
+;;   ;; Comment out/remove the ones you do not need
+;;  (setq verilog-ext-feature-list
+;;        '(font-lock
+;;          xref
+;;          capf
+;;          hierarchy
+;;          eglot
+;;          lsp
+;;          flycheck
+;;          beautify
+;;          navigation
+;;          template
+;;          formatter
+;;          compilation
+;;          imenu
+;;          which-func
+;;          hideshow
+;;          typedefs
+;;          time-stamp
+;;          block-end-comments
+;;          company-keywords
+;;          ports))
+;;  :config
+;;  (verilog-ext-mode-setup))
 
 (provide 'init-packages)
