@@ -29,5 +29,13 @@
 
 ;(set-background-color "#C7EDCC")
 
+
 ;;
+(if (display-graphic-p) nil
+  ; disable all the themes
+  (dolist (theme custom-enabled-themes)
+    (disable-theme theme))
+  ; disable the menu bar
+  (menu-bar-mode 0))
+
 (provide 'init-ui)
