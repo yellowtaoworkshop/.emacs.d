@@ -7,7 +7,7 @@
 ;; bind f2 to open init.el
 (defun open-my-init-file()
   (interactive)
-  (find-file "~/.emacs.d/init.el"))
+  (find-file (expand-file-name "init.el" user-emacs-directory)))
 
 (global-set-key (kbd "<f2>") 'open-my-init-file)
 
