@@ -6,16 +6,17 @@
 (setq make-backup-files nil)
 
 ;;
-(require 'recentf)
-(recentf-mode 1)
-(setq recentf-ma-menu-items 25)
+(setq recentf-max-menu-items 25)
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (recentf-mode 1)))
 
 ;; make the selection part can be deleted when insert
 (delete-selection-mode 1)
 
 (add-hook 'before-save-hook 'time-stamp)
 
-(global-auto-revert-mode 1)
+(add-hook 'emacs-startup-hook 'global-auto-revert-mode)
 
 ;;
 (provide 'init-better-default)

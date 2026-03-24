@@ -5,7 +5,7 @@
 ;; You may delete these explanatory comments.
 
 ;; bind f2 to open init.el
-(defun open-my-init-file()
+(defun open-my-init-file ()
   (interactive)
   (find-file (expand-file-name "init.el" user-emacs-directory)))
 
@@ -15,7 +15,7 @@
 
 ;; set coustm.el file path
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file)
+(load custom-file 'noerror 'nomessage)
 
 (setq package-native-compile t)
 

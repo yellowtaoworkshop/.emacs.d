@@ -7,80 +7,93 @@
 
 
 (when (>= emacs-major-version 24)
-    (require 'package)
-    (package-initialize)
-    (setq package-archives '(
-			     ("melpa-stable" . "https://stable.melpa.org/packages/")
-			     ("melpa" . "https://melpa.org/packages/")
-			     ("gnu" . "https://elpa.gnu.org/packages/"))))
+  (require 'package)
+  (setq package-archives '(("melpa-stable" . "https://stable.melpa.org/packages/")
+                           ("melpa" . "https://melpa.org/packages/")
+                           ("gnu" . "https://elpa.gnu.org/packages/")))
+  (package-initialize))
 
 (setq package-check-signature nil)
 
 (require 'cl-lib)
 
 ;; ...
-(defvar gavin/packages '(
-			company
-			hungry-delete
-			undo-tree
-			smooth-scrolling
-			popup
-			org-beautify-theme
-			org
-			goto-chg
-			async
-			ivy
-			swiper
-			counsel
-			smex 
-      smartparens
-			popwin
-			highlight-parentheses
-			highlight-numbers
-			expand-region
-			yasnippet
-			use-package
-			diminish
-			org-bullets
-      winum
-      hl-todo
-      doom-modeline
-      vterm
-			) "default package")
+(defvar gavin/packages
+  '(all-the-icons
+    all-the-icons-completion
+    all-the-icons-dired
+    all-the-icons-ibuffer
+    all-the-icons-ivy
+    async
+    company
+    counsel
+    diminish
+    doom-modeline
+    expand-region
+    goto-chg
+    highlight-numbers
+    highlight-parentheses
+    hl-todo
+    hungry-delete
+    ivy
+    markdown-mode
+    moe-theme
+    org
+    org-beautify-theme
+    org-bullets
+    p4
+    popup
+    popwin
+    projectile
+    smartparens
+    smooth-scrolling
+    smex
+    swiper
+    undo-tree
+    use-package
+    vterm
+    vterm-toggle
+    winum
+    yasnippet)
+  "Packages installed by `gavin/bootstrap-packages'.")
 
-(setq package-selected-packages gavin/packages)
+(defun gavin/bootstrap-packages ()
+  "Install packages listed in `gavin/packages'."
+  (interactive)
+  (let ((missing-packages (cl-remove-if #'package-installed-p gavin/packages)))
+    (if (null missing-packages)
+        (message "All configured packages are already installed.")
+      (message "Refreshing package database...")
+      (package-refresh-contents)
+      (dolist (pkg missing-packages)
+        (message "Installing %s..." pkg)
+        (package-install pkg))
+      (message "Bootstrap complete. Restart Emacs to load new packages."))))
 
-(defun gavin/package-installed-p ()
-  (cl-loop for pkg in gavin/packages
-	when (not (package-installed-p pkg)) do (cl-return nil)
-	finally (cl-return t)))
+(unless (require 'use-package nil t)
+  (defmacro use-package (&rest _args) nil)
+  (message "Package setup skipped. Run M-x gavin/bootstrap-packages to install dependencies."))
 
-(unless (gavin/package-installed-p)
-  (message "Refreshing package database..")
-  (package-refresh-contents)
-  (dolist (pkg gavin/packages)
-    (when (not (package-installed-p pkg))
-      (package-install pkg))))
+(setq use-package-always-ensure t
+      use-package-expand-minimally t
+      use-package-verbose nil)
 
 (use-package smooth-scrolling
-  :ensure t
+  :defer 1
   :init
   (setq smooth-scroll-margin 3)
-  :hook ((after-init . smooth-scrolling-mode)))
+  :config
+  (smooth-scrolling-mode 1))
 
-;;
 (use-package highlight-parentheses
-  :ensure t
-  :hook ((after-init . highlight-parentheses-mode)))
+  :hook ((prog-mode . highlight-parentheses-mode)
+         (emacs-lisp-mode . highlight-parentheses-mode)))
 
-;;
 (use-package highlight-numbers
-  :ensure t
-  :hook ((prog-mode . highlight-numbers-mode)))
+  :hook (prog-mode . highlight-numbers-mode))
 
 (use-package hungry-delete
-  :ensure t
-  :hook ((after-init . global-hungry-delete-mode)))
+  :hook (emacs-startup . global-hungry-delete-mode))
 
 (use-package verilog-mode
   :defer t
@@ -92,88 +105,63 @@
 
 ;;turn on auto complete 
 (use-package company
-  :ensure t
   :hook
   (prog-mode . company-mode)
-    ;; let company support verilog
-  ;;:config
-  ;;(add-to-list 'company-keywords-alist (cons 'verilog-mode verilog-keywords))
   )
 
 ;; smartparens enable
 (use-package smartparens
-  :ensure t
+  :hook (emacs-startup . smartparens-global-strict-mode)
   :config
-  (smartparens-global-strict-mode t)
   (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
   (sp-local-pair 'verilog-mode    "'" nil :actions nil)
   (sp-local-pair 'verilog-mode    "`" nil :actions nil))
 
-(use-package highlight-parentheses
-  :ensure t
-  :config
-  (global-highlight-parentheses-mode t))
-
 ;; popwin enable
 (use-package popwin
-  :ensure t
-  :config
-  (popwin-mode t)
-  ;;(push '("*undo-tree*" :width 0.3 :position bottom) popwin:special-display-config)
-  )
+  :hook (emacs-startup . popwin-mode))
 
 (use-package yasnippet
-  :ensure t
-  :hook ((prog-mode . yas-global-mode)
-         )
-  )
+  :hook (emacs-startup . yas-global-mode))
 
 (use-package undo-tree
-  :ensure t
-  :hook ((after-init . global-undo-tree-mode))
+  :hook (emacs-startup . global-undo-tree-mode)
   :config
-  ;;(setq undo-tree-visualizer-diff t)
   (setq undo-tree-visualizer-timestamps t))
 
 (use-package markdown-mode 
-  :ensure t
   :defer t
   :config
   (setq markdown-fontify-code-blocks-natively t))
 
 (use-package expand-region
-  :ensure t)
+  :commands er/expand-region)
 
 (use-package hl-todo
-  :ensure t
   :hook ((prog-mode . hl-todo-mode)
-         (yaml-mode . hl-todo-mode))
-  )
+         (yaml-mode . hl-todo-mode)))
 
 (use-package doom-modeline
-  :ensure t
-  :hook (after-init . doom-modeline-mode)
+  :hook (emacs-startup . doom-modeline-mode)
   :config
   (setq inhibit-compacting-font-caches t))
 
 (use-package all-the-icons
-  :ensure t)
+  :defer t)
 
 (use-package all-the-icons-dired
-  :ensure t
-  :hook ((dired-mode . all-the-icons-dired-mode)))
+  :hook (dired-mode . all-the-icons-dired-mode))
 
 (use-package all-the-icons-ibuffer
-  :ensure t
-  :hook ((ibuffer-mode . all-the-icons-ibuffer-mode)))
+  :hook (ibuffer-mode . all-the-icons-ibuffer-mode))
 
 (use-package all-the-icons-completion
-  :ensure t
-  :hook ((company-mode . all-the-icons-completion-mode)))
+  :hook (company-mode . all-the-icons-completion-mode))
 
 (use-package all-the-icons-ivy
-  :ensure t
-  :init (add-hook 'after-init-hook 'all-the-icons-ivy-setup))
+  :after ivy
+  :config
+  (all-the-icons-ivy-setup))
 
 ;;(use-package all-the-icons-ivy-rich
 ;;  :ensure t
@@ -185,16 +173,33 @@
 ;;  :hook (ivy-mode . ivy-rich-mode)
 ;;  )
 
-;;
 (use-package ivy
-  :hook ((after-init . ivy-mode))
+  :hook (emacs-startup . ivy-mode)
   :config
   (setq ivy-use-virtual-buffers t
         ivy-count-format "%d/%d "))
 
 (use-package projectile
-  :ensure t
-  :init (projectile-mode 1))
+  :defer 2
+  :config
+  (projectile-mode 1))
+
+(use-package diminish
+  :defer 1
+  :config
+  (with-eval-after-load 'eldoc
+    (diminish 'eldoc-mode))
+  (with-eval-after-load 'undo-tree
+    (diminish 'undo-tree-mode))
+  (with-eval-after-load 'company
+    (diminish 'company-mode "ac"))
+  (with-eval-after-load 'smartparens
+    (diminish 'smartparens-mode "sp")))
+
+(use-package winum
+  :hook (emacs-startup . winum-mode)
+  :config
+  (setq winum-auto-setup-mode-line t))
 
 ;(use-package lsp-mode
 ;  :init
@@ -221,15 +226,15 @@
 
 ;(add-hook 'verilog-mode-hook #'lsp-deferred)
 (use-package p4
-  :ensure t)
+  :defer t)
 
 (use-package vterm
   :defer t
-  :ensure t)
+  )
 
 (use-package vterm-toggle
   :defer t
-  :ensure t)
+  )
 
 ;;(use-package verilog-ext
 ;;  :after verilog-mode

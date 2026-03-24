@@ -8,21 +8,10 @@
 ;(spaceline-emacs-theme)
 
 ;; hilight the current line
-(global-hl-line-mode nil)
+(global-hl-line-mode -1)
 
 ;; turn off the tool bar
 (tool-bar-mode -1)
-
-(require 'winum)
-(setq winum-auto-setup-mode-line t)
-(winum-mode)
-
-(require 'diminish)
-(diminish 'eldoc-mode)
-(diminish 'undo-tree-mode)
-(diminish 'helm-mode)
-(diminish 'company-mode "ac")
-(diminish 'smartparens-mode "sp")
 
 ;(add-hook 'verilog-mode-hook #'tree-sitter-mode)
 ;(add-hook 'verilog-mode-hook #'tree-sitter-hl-mode)
@@ -30,12 +19,10 @@
 ;(set-background-color "#C7EDCC")
 
 
-;;
-(if (display-graphic-p) nil
-  ; disable all the themes
-  (dolist (theme custom-enabled-themes)
-    (disable-theme theme))
-  ; disable the menu bar
+(if (display-graphic-p)
+    (condition-case nil
+        (load-theme 'moe-light t)
+      (error nil))
   (menu-bar-mode 0))
 
 (provide 'init-ui)

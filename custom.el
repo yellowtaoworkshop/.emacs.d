@@ -112,9 +112,11 @@
  '(cua-overwrite-cursor-color "#b58900")
  '(cua-read-only-cursor-color "#859900")
  '(current-language-environment "UTF-8")
- '(custom-enabled-themes '(moe-light))
+ '(custom-enabled-themes nil)
  '(custom-safe-themes
-   '("9e9fbcfbd4097d606e523e987a3b06345ce219aff06006d8be98abc7fac6f86f"
+   '("0ee15d9d6ea7ac4516368884c4a4bb740c96d2054e9b0c2b0a68698a35d4438a"
+     "3aa51468052c1e3e21dd41a3fa40c0161e07ca600683e3d96f1bca70f36749e2"
+     "9e9fbcfbd4097d606e523e987a3b06345ce219aff06006d8be98abc7fac6f86f"
      "05dd18cce7247eefa694037a6f73aa3574a9f8735e2dcc67bc47abb07ff7a9d4"
      "d537a9d42c6f5349d1716ae9be9a0645cc168f7aff2a8353819d570e5d02c0b3"
      "3c451787cee570710bff441154a7db8b644cdbb7d270189b2724c6041a262381"
@@ -223,8 +225,8 @@
  '(ido-mode 'both nil (ido))
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
- '(line-number-mode t)
  '(large-file-warning-threshold 50000000)
+ '(line-number-mode t)
  '(livedown-autostart t)
  '(livedown-browser nil)
  '(livedown-port 1337)
@@ -245,28 +247,38 @@
    '("~/Documents/Org/workGtd.org" "~/Documents/Org/learnGtd.org"))
  '(package-native-compile t)
  '(package-selected-packages
-   '(vterm-toggle p4 projectile all-the-icons-ivy all-the-icons-completion all-the-icons-ibuffer all-the-icons-dired all-the-icons markdown-mode verilog-ext verilog-ts-mode leuven-theme tree-sitter-langs treesit-auto pdf-tools pdf-view-pagemark pdf-view-restore lua-mode consult-eglot company hungry-delete undo-tree smooth-scrolling popup org-beautify-theme org goto-chg async ivy swiper counsel smex smartparens popwin highlight-parentheses highlight-numbers expand-region yasnippet use-package diminish org-bullets winum hl-todo doom-modeline vterm))
+   '(vterm-toggle p4 projectile all-the-icons-ivy
+                  all-the-icons-completion all-the-icons-ibuffer
+                  all-the-icons-dired all-the-icons markdown-mode
+                  verilog-ext verilog-ts-mode leuven-theme
+                  tree-sitter-langs treesit-auto pdf-tools
+                  pdf-view-pagemark pdf-view-restore lua-mode
+                  consult-eglot company hungry-delete undo-tree
+                  smooth-scrolling popup org-beautify-theme org
+                  goto-chg async ivy swiper counsel smex smartparens
+                  popwin highlight-parentheses highlight-numbers
+                  expand-region yasnippet use-package diminish
+                  org-bullets winum hl-todo doom-modeline vterm))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(size-indication-mode t)
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
  '(standard-indent 2)
  '(tab-width 2)
- '(tags-table-list
-   (seq-filter (lambda (path)
-                 (let ((expanded-path (substitute-in-file-name path)))
-                   (file-exists-p expanded-path)))
-               '("~/TAGS" "$WA/TAGS")
-               )
-   )
  '(tags-revert-without-query t)
+ '(tags-table-list
+   (seq-filter
+    (lambda (path)
+      (let ((expanded-path (substitute-in-file-name path)))
+        (file-exists-p expanded-path)))
+    '("~/TAGS" "$WA/TAGS")))
  '(term-default-bg-color "#fdf6e3")
  '(term-default-fg-color "#657b83")
  '(tool-bar-mode nil)
  '(undo-tree-auto-save-history nil)
  '(use-file-dialog nil)
  '(use-package-minimum-reported-time 0.001)
- '(use-package-verbose t)
+ '(use-package-verbose nil)
  '(vc-annotate-background nil)
  '(vc-annotate-background-mode nil)
  '(vc-annotate-color-map
