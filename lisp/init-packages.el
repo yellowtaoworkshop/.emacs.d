@@ -19,23 +19,23 @@
 
 ;; ...
 (defvar gavin/packages
-  '(all-the-icons
-    all-the-icons-completion
-    all-the-icons-dired
-    all-the-icons-ibuffer
-    all-the-icons-ivy
+  '(nerd-icons
+    nerd-icons-dired
+    nerd-icons-ibuffer
+    ;;nerd-icons-ivy-rich
     async
     company
     counsel
-    diminish
-    doom-modeline
+    ;;diminish
+    ;;doom-modeline
     expand-region
     goto-chg
     highlight-numbers
     highlight-parentheses
     hl-todo
-    hungry-delete
+    ;;hungry-delete
     ivy
+    ;;ivy-rich
     markdown-mode
     moe-theme
     org
@@ -46,7 +46,6 @@
     popwin
     projectile
     smartparens
-    smooth-scrolling
     smex
     swiper
     undo-tree
@@ -78,13 +77,6 @@
       use-package-expand-minimally t
       use-package-verbose nil)
 
-(use-package smooth-scrolling
-  :defer 1
-  :init
-  (setq smooth-scroll-margin 3)
-  :config
-  (smooth-scrolling-mode 1))
-
 (use-package highlight-parentheses
   :hook ((prog-mode . highlight-parentheses-mode)
          (emacs-lisp-mode . highlight-parentheses-mode)))
@@ -92,8 +84,8 @@
 (use-package highlight-numbers
   :hook (prog-mode . highlight-numbers-mode))
 
-(use-package hungry-delete
-  :hook (emacs-startup . global-hungry-delete-mode))
+;;(use-package hungry-delete
+;;  :hook (emacs-startup . global-hungry-delete-mode))
 
 (use-package verilog-mode
   :defer t
@@ -105,17 +97,21 @@
 
 ;;turn on auto complete 
 (use-package company
+  :init
+  (setq company-idle-delay 0.8
+        company-minimum-prefix-length 3
+        company-files-exclusions '(".git/" ".svn/" ".hg/")
+        company-backends '((company-capf company-keywords company-dabbrev-code)))
   :hook
-  (prog-mode . company-mode)
-  )
+  (prog-mode . company-mode))
 
 ;; smartparens enable
-(use-package smartparens
-  :hook (emacs-startup . smartparens-global-strict-mode)
-  :config
-  (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
-  (sp-local-pair 'verilog-mode    "'" nil :actions nil)
-  (sp-local-pair 'verilog-mode    "`" nil :actions nil))
+;;(use-package smartparens
+;;  :hook (emacs-startup . smartparens-global-strict-mode)
+;;  :config
+;;  (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
+;;  (sp-local-pair 'verilog-mode    "'" nil :actions nil)
+;;  (sp-local-pair 'verilog-mode    "`" nil :actions nil))
 
 ;; popwin enable
 (use-package popwin
@@ -135,43 +131,46 @@
   (setq markdown-fontify-code-blocks-natively t))
 
 (use-package expand-region
+  :defer t
   :commands er/expand-region)
 
 (use-package hl-todo
   :hook ((prog-mode . hl-todo-mode)
          (yaml-mode . hl-todo-mode)))
 
-(use-package doom-modeline
-  :hook (emacs-startup . doom-modeline-mode)
-  :config
-  (setq inhibit-compacting-font-caches t))
-
-(use-package all-the-icons
-  :defer t)
-
-(use-package all-the-icons-dired
-  :hook (dired-mode . all-the-icons-dired-mode))
-
-(use-package all-the-icons-ibuffer
-  :hook (ibuffer-mode . all-the-icons-ibuffer-mode))
-
-(use-package all-the-icons-completion
-  :hook (company-mode . all-the-icons-completion-mode))
-
-(use-package all-the-icons-ivy
-  :after ivy
-  :config
-  (all-the-icons-ivy-setup))
-
-;;(use-package all-the-icons-ivy-rich
+;;(use-package doom-modeline
+;;  :hook (emacs-startup . doom-modeline-mode)
+;;  :config
+;;  (setq inhibit-compacting-font-caches t))
+;;(use-package nerd-icons-mode-line
 ;;  :ensure t
-;;  :hook ((ivy-mode . all-the-icons-ivy-rich-mode))
-;;  )
+;;;;:vc (:url "https://github.com/grolongo/nerd-icons-mode-line")
+;;  :custom
+;;  (nerd-icons-mode-line-v-adjust 0.1) ; default value
+;;  (nerd-icons-mode-line-size 1.0) ; default value
+;;  :hook (emacs-startup . nerd-icons-mode-line-global-mode))
 
+(use-package nerd-icons
+  :defer t
+  :custom
+  (nerd-icons-font-family "JetBrainsMono Nerd Font Mono"))
+
+(use-package nerd-icons-dired
+  :hook (dired-mode . nerd-icons-dired-mode))
+
+(use-package nerd-icons-ibuffer
+  :hook (ibuffer-mode . nerd-icons-ibuffer-mode))
+
+;;(use-package nerd-icons-completion
+;;  :defer t
+;;  :config (nerd-icons-completion-mode))
+
+;;(use-package nerd-icons-ivy-rich
+;;  :defer t
+;;  :hook (emacs-startup . nerd-icons-ivy-rich-mode))
+;;
 ;;(use-package ivy-rich
-;;  :ensure t
-;;  :hook (ivy-mode . ivy-rich-mode)
-;;  )
+;;  :hook (emacs-startup . ivy-rich-mode))
 
 (use-package ivy
   :hook (emacs-startup . ivy-mode)
@@ -184,17 +183,17 @@
   :config
   (projectile-mode 1))
 
-(use-package diminish
-  :defer 1
-  :config
-  (with-eval-after-load 'eldoc
-    (diminish 'eldoc-mode))
-  (with-eval-after-load 'undo-tree
-    (diminish 'undo-tree-mode))
-  (with-eval-after-load 'company
-    (diminish 'company-mode "ac"))
-  (with-eval-after-load 'smartparens
-    (diminish 'smartparens-mode "sp")))
+;;(use-package diminish
+;;  :defer 1
+;;  :config
+;;  (with-eval-after-load 'eldoc
+;;    (diminish 'eldoc-mode))
+;;  (with-eval-after-load 'undo-tree
+;;    (diminish 'undo-tree-mode))
+;;  (with-eval-after-load 'company
+;;    (diminish 'company-mode "ac"))
+;;  (with-eval-after-load 'smartparens
+;;    (diminish 'smartparens-mode "sp")))
 
 (use-package winum
   :hook (emacs-startup . winum-mode)
@@ -226,7 +225,8 @@
 
 ;(add-hook 'verilog-mode-hook #'lsp-deferred)
 (use-package p4
-  :defer t)
+  :defer t
+  )
 
 (use-package vterm
   :defer t
@@ -236,36 +236,34 @@
   :defer t
   )
 
-;;(use-package verilog-ext
-;;  :after verilog-mode
-;;  :demand
-;;  :hook ((verilog-mode . verilog-ext-mode))
-;;  :init
-;;   ;; Can also be set through `M-x RET customize-group RET verilog-ext':
-;;   ;;  - Verilog Ext Feature List (provides info of different features)
-;;   ;; Comment out/remove the ones you do not need
-;;  (setq verilog-ext-feature-list
-;;        '(font-lock
-;;          xref
-;;          capf
-;;          hierarchy
-;;          eglot
-;;          lsp
-;;          flycheck
-;;          beautify
-;;          navigation
-;;          template
-;;          formatter
-;;          compilation
-;;          imenu
-;;          which-func
-;;          hideshow
-;;          typedefs
-;;          time-stamp
-;;          block-end-comments
-;;          company-keywords
-;;          ports))
-;;  :config
-;;  (verilog-ext-mode-setup))
+(use-package verilog-ext
+  :hook ((verilog-mode . verilog-ext-mode))
+  :init
+   ;; Can also be set through `M-x RET customize-group RET verilog-ext':
+   ;;  - Verilog Ext Feature List (provides info of different features)
+   ;; Comment out/remove the ones you do not need
+  (setq verilog-ext-feature-list
+        '(font-lock
+          xref
+          capf
+          hierarchy
+          eglot
+          lsp
+          flycheck
+          beautify
+          navigation
+          template
+          formatter
+          compilation
+          imenu
+          which-func
+          hideshow
+          typedefs
+          time-stamp
+          block-end-comments
+          company-keywords
+          ports))
+  :config
+  (verilog-ext-mode-setup))
 
 (provide 'init-packages)

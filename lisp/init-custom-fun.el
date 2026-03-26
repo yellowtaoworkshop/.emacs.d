@@ -1,6 +1,6 @@
 
 ;; copy file into the clipboard
-(defun my-put-file-name-on-clipboard ()
+(defun gavin/put-file-name-on-clipboard ()
   "Put the current file name on the clipboard"
   (interactive)
   (let ((filename (if (equal major-mode 'dired-mode)
