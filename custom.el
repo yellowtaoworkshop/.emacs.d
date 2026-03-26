@@ -12,13 +12,6 @@
  '(ansi-term-color-vector
    [unspecified "#2d2a2e" "#ff6188" "#a9dc76" "#ffd866" "#78dce8"
                 "#ab9df2" "#ff6188" "#fcfcfa"] t)
- '(company-backends
-   '((company-capf company-keywords company-dabbrev-code company-abbrev
-                   company-etags company-dabbrev company-semantic)
-     company-files company-ispell company-dabbrev))
- '(company-files-exclusions nil)
- '(company-idle-delay 0.3)
- '(company-minimum-prefix-length 3)
  '(compilation-message-face 'default)
  '(connection-local-criteria-alist
    '(((:application tramp :protocol "kubernetes")
@@ -181,29 +174,6 @@
      (deprecated :strike-through "#a9b7c6")))
  '(fci-rule-color "#eee8d5")
  '(font-use-system-font nil)
- '(helm-completing-read-handlers-alist
-   '((describe-function . helm-completing-read-symbols)
-     (describe-variable . helm-completing-read-symbols)
-     (describe-symbol . helm-completing-read-symbols)
-     (debug-on-entry . helm-completing-read-symbols)
-     (find-function . helm-completing-read-symbols)
-     (disassemble . helm-completing-read-symbols)
-     (trace-function . helm-completing-read-symbols)
-     (trace-function-foreground . helm-completing-read-symbols)
-     (trace-function-background . helm-completing-read-symbols)
-     (find-tag . helm-completing-read-default-find-tag)
-     (org-capture . helm-org-completing-read-tags)
-     (org-set-tags . helm-org-completing-read-tags)
-     (ffap-alternate-file) (tmm-menubar) (find-file)
-     (find-file-read-only . ido)
-     (find-file-at-point . helm-completing-read-sync-default-handler)
-     (ffap . helm-completing-read-sync-default-handler)
-     (execute-extended-command)
-     (dired-do-rename . helm-read-file-name-handler-1)
-     (dired-do-copy . helm-read-file-name-handler-1)
-     (dired-do-symlink . helm-read-file-name-handler-1)
-     (dired-do-relsymlink . helm-read-file-name-handler-1)
-     (dired-do-hardlink . helm-read-file-name-handler-1)))
  '(highlight-changes-colors '("#d33682" "#6c71c4"))
  '(highlight-parentheses-colors '("purple" "cyan" "dark green" "IndianRed4"))
  '(highlight-symbol-colors
@@ -226,7 +196,6 @@
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(large-file-warning-threshold 50000000)
- '(line-number-mode t)
  '(livedown-autostart t)
  '(livedown-browser nil)
  '(livedown-port 1337)
@@ -239,7 +208,6 @@
  '(magit-diff-use-overlays nil)
  '(major-mode 'text-mode)
  '(markdown-command "pandoc --highlight-style zenburn")
- '(nerd-icons-font-family "Hack Nerd Font Mono")
  '(nrepl-message-colors
    '("#dc322f" "#cb4b16" "#b58900" "#5b7300" "#b3c34d" "#0061a8"
      "#2aa198" "#d33682" "#6c71c4"))
@@ -247,18 +215,16 @@
    '("~/Documents/Org/workGtd.org" "~/Documents/Org/learnGtd.org"))
  '(package-native-compile t)
  '(package-selected-packages
-   '(vterm-toggle p4 projectile all-the-icons-ivy
-                  all-the-icons-completion all-the-icons-ibuffer
-                  all-the-icons-dired all-the-icons markdown-mode
-                  verilog-ext verilog-ts-mode leuven-theme
-                  tree-sitter-langs treesit-auto pdf-tools
-                  pdf-view-pagemark pdf-view-restore lua-mode
-                  consult-eglot company hungry-delete undo-tree
-                  smooth-scrolling popup org-beautify-theme org
-                  goto-chg async ivy swiper counsel smex smartparens
-                  popwin highlight-parentheses highlight-numbers
-                  expand-region yasnippet use-package diminish
-                  org-bullets winum hl-todo doom-modeline vterm))
+   '(async company counsel diminish expand-region goto-chg
+           highlight-numbers highlight-parentheses hl-todo
+           hungry-delete markdown-mode moe-theme nerd-icons-completion
+           nerd-icons-dired nerd-icons-ibuffer nerd-icons-ivy-rich
+           nerd-icons-mode-line org-beautify-theme org-bullets p4
+           popup popwin projectile smartparens smex swiper undo-tree
+           verilog-ext verilog-ts-mode vterm-toggle winum yasnippet))
+ '(package-vc-selected-packages
+   '((nerd-icons-mode-line :url
+                           "https://github.com/grolongo/nerd-icons-mode-line")))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(size-indication-mode t)
@@ -317,7 +283,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "JetBrainsMono Nerd Font" :foundry "JB" :slant normal :weight regular :height 120 :width normal))))
+ '(default ((t (:family "JetBrainsMonoNL Nerd Font Propo" :foundry "JB" :slant normal :weight regular :height 128 :width normal))))
  '(company-preview ((t (:foreground "gray"))))
  '(company-preview-common ((t (:inherit nil :foreground "dim gray"))))
  '(company-scrollbar-bg ((t (:background "white"))) t)
