@@ -19,14 +19,14 @@
 
 (setq package-native-compile t)
 
+;;
+(require 'init-better-default)
+
 ;; Package Management
 (require 'init-packages)
 
 ;; change the ui
 (require 'init-ui)
-
-;;
-(require 'init-better-default)
 
 (require 'init-org)
 
