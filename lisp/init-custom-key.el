@@ -14,21 +14,23 @@
 
 
 ;; for helm blinding key
-(with-eval-after-load 'ivy 
-  (global-set-key (kbd "M-x") #'counsel-M-x)
-  (global-set-key (kbd "C-x C-f") #'counsel-find-file)
-  (global-set-key (kbd "C-x b") #'counsel-switch-buffer)
-  (global-set-key (kbd "C-h f") #'counsel-describe-function)
-  (global-set-key (kbd "C-h v") #'counsel-describe-variable)
-  (with-eval-after-load 'swiper 
-    ;; Change the keybinds to whatever you like :)
-    (global-set-key (kbd "M-s") 'swiper)
-    (global-set-key (kbd "C-c M-s") 'swiper-multi)
-    (global-set-key (kbd "C-x M-s") 'swiper-all)
-    ;; When doing isearch, hand the word over to helm-swoop
-    (define-key isearch-mode-map (kbd "M-s") 'swiper-from-isearch)
-    ;; From helm-swoop to helm-multi-swoop-all
-    ))
+;;(with-eval-after-load 'ivy 
+;;  (global-set-key (kbd "M-x") #'counsel-M-x)
+;;  (global-set-key (kbd "C-x C-f") #'counsel-find-file)
+;;  (global-set-key (kbd "C-x b") #'counsel-switch-buffer)
+;;  (global-set-key (kbd "C-h f") #'counsel-describe-function)
+;;  (global-set-key (kbd "C-h v") #'counsel-describe-variable)
+;;  (with-eval-after-load 'swiper 
+;;    ;; Change the keybinds to whatever you like :)
+;;    (global-set-key (kbd "M-s") 'swiper)
+;;    (global-set-key (kbd "C-c M-s") 'swiper-multi)
+;;    (global-set-key (kbd "C-x M-s") 'swiper-all)
+;;    ;; When doing isearch, hand the word over to helm-swoop
+;;    (define-key isearch-mode-map (kbd "M-s") 'swiper-from-isearch)
+;;    ;; From helm-swoop to helm-multi-swoop-all
+;;    ))
+
+
 
 (with-eval-after-load 'company
   (define-key company-active-map (kbd "C-n") 'company-select-next)
@@ -38,8 +40,8 @@
 
 
 ;; set recent file list bind ket to C-x C-r
-(with-eval-after-load 'recentf
-  (global-set-key (kbd "C-x C-r") 'counsel-recentf))
+;(with-eval-after-load 'recentf
+;  (global-set-key (kbd "C-x C-r") 'counsel-recentf))
 
 (with-eval-after-load 'expand-region
   (global-set-key (kbd "C-=") 'er/expand-region))

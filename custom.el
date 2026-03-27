@@ -215,13 +215,13 @@
    '("~/Documents/Org/workGtd.org" "~/Documents/Org/learnGtd.org"))
  '(package-native-compile t)
  '(package-selected-packages
-   '(async company counsel diminish expand-region goto-chg
-           highlight-numbers highlight-parentheses hl-todo
-           hungry-delete markdown-mode moe-theme nerd-icons-completion
-           nerd-icons-dired nerd-icons-ibuffer nerd-icons-ivy-rich
-           nerd-icons-mode-line org-beautify-theme org-bullets p4
-           popup popwin projectile smartparens smex swiper undo-tree
-           verilog-ext verilog-ts-mode vterm-toggle winum yasnippet))
+   '(company consult expand-region f goto-chg highlight-numbers
+             highlight-parentheses hl-todo ht lsp-mode marginalia
+             markdown-mode moe-theme nerd-icons-dired
+             nerd-icons-ibuffer nerd-icons-mode-line orderless
+             org-beautify-theme org-bullets p4 popup popwin projectile
+             smartparens spinner undo-tree verilog-ext vertico
+             vterm-toggle vundo winum))
  '(package-vc-selected-packages
    '((nerd-icons-mode-line :url
                            "https://github.com/grolongo/nerd-icons-mode-line")))
