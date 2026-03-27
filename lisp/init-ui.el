@@ -20,9 +20,19 @@
 
 
 (if (display-graphic-p)
+    (progn 
+      ;; disable the scroll bar and load the moe light them with no error
+      ;; in case on that there is no theme
+      (scroll-bar-mode 0)
+      (condition-case nil
+          (load-theme 'moe-light t)
+        (error nil)))
+  (progn 
+    ;; disable the menu bar and load the dark theme
+    (menu-bar-mode 0)
     (condition-case nil
-        (load-theme 'moe-light t)
-      (error nil))
-  (menu-bar-mode 0))
-
+        (load-theme  'moe-dark t)
+      (error nil))))
+  
+ 
 (provide 'init-ui)

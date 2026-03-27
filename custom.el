@@ -215,15 +215,16 @@
    '("~/Documents/Org/workGtd.org" "~/Documents/Org/learnGtd.org"))
  '(package-native-compile t)
  '(package-selected-packages
-   '(company consult expand-region f goto-chg highlight-numbers
-             highlight-parentheses hl-todo ht lsp-mode marginalia
-             markdown-mode moe-theme nerd-icons-dired
-             nerd-icons-ibuffer nerd-icons-mode-line orderless
-             org-beautify-theme org-bullets p4 popup popwin projectile
-             smartparens spinner undo-tree verilog-ext vertico
-             vterm-toggle vundo winum))
+   '(company consult consult-yasnippet expand-region f gcmh goto-chg
+             highlight-numbers highlight-parentheses hl-todo ht
+             lsp-mode magit marginalia markdown-mode moe-theme
+             nerd-icons-dired nerd-icons-ibuffer nerd-icons-mode-line
+             orderless org-beautify-theme org-bullets p4 popup popwin
+             projectile smartparens spinner undo-tree verilog-ext
+             vertico vterm-toggle vundo winum))
  '(package-vc-selected-packages
-   '((nerd-icons-mode-line :url
+   '((p4 :url "https://github.com/JohnC32/perforce-emacs")
+     (nerd-icons-mode-line :url
                            "https://github.com/grolongo/nerd-icons-mode-line")))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
