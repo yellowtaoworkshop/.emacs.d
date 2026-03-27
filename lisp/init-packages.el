@@ -39,15 +39,15 @@
     org
     org-beautify-theme
     org-bullets
-    p4
     popup
     popwin
     projectile
     smartparens
-    use-package
     vterm
     vterm-toggle
     winum
+    gcmh
+    magit
     yasnippet)
   "Packages installed by `gavin/bootstrap-packages'.")
 
@@ -101,19 +101,23 @@
   (prog-mode . company-mode))
 
 ;; smartparens enable
-;;(use-package smartparens
-;;  :hook (emacs-startup . smartparens-global-strict-mode)
-;;  :config
-;;  (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
-;;  (sp-local-pair 'verilog-mode    "'" nil :actions nil)
-;;  (sp-local-pair 'verilog-mode    "`" nil :actions nil))
+(use-package smartparens
+  :defer t
+  :hook (prog-mode text-mode markdown-mode)
+  :ensure t
+  :config
+  (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
+  (sp-local-pair 'verilog-mode    "'" nil :actions nil)
+  (sp-local-pair 'verilog-mode    "`" nil :actions nil))
 
 ;; popwin enable
 (use-package popwin
   :hook (emacs-startup . popwin-mode))
 
 (use-package yasnippet
-  :hook (emacs-startup . yas-global-mode))
+  :config
+  (yas-reload-all)
+  :hook (prog-mode . yas-minor-mode))
 
 (use-package vundo
   :bind ("C-x u" . vundo)
@@ -358,7 +362,8 @@
   (setq winum-auto-setup-mode-line t))
 
 (use-package p4
-  :defer t
+  :vc (:url  "https://github.com/JohnC32/perforce-emacs")
+  :after prog-mode
   )
 
 (use-package vterm
@@ -398,5 +403,20 @@
           ports))
   :config
   (verilog-ext-mode-setup))
+
+(use-package gcmh
+  :ensure t
+  :hook (emacs-startup . gcmh-mode)
+  :config
+  (setq gcmh-idle-delay 1))
+
+(use-package magit
+  :ensure t
+  :bind (("C-x g" . magit-status)
+         ("C-c M-g" . magit-dispatch-popup)))
+
+(use-package consult-yasnippet
+  :ensure t
+  :after yas-minor-mode)
 
 (provide 'init-packages)
