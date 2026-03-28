@@ -223,9 +223,9 @@
              projectile smartparens spinner undo-tree verilog-ext
              vertico vterm-toggle vundo winum))
  '(package-vc-selected-packages
-   '((p4 :url "https://github.com/JohnC32/perforce-emacs")
-     (nerd-icons-mode-line :url
-                           "https://github.com/grolongo/nerd-icons-mode-line")))
+   '((nerd-icons-mode-line :url
+                           "https://github.com/grolongo/nerd-icons-mode-line")
+     (p4 :url "https://github.com/JohnC32/perforce-emacs")))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(size-indication-mode t)
