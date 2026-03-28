@@ -144,6 +144,7 @@
 ;;  (setq inhibit-compacting-font-caches t))
 (use-package nerd-icons-mode-line
   :ensure t
+  :vc (:url "https://github.com/grolongo/nerd-icons-mode-line")
   :custom
   (nerd-icons-mode-line-v-adjust 0.1) ; default value
   (nerd-icons-mode-line-size 1.0) ; default value
