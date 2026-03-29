@@ -23,7 +23,6 @@
     nerd-icons-dired
     nerd-icons-ibuffer
     ;;nerd-icons-ivy-rich
-    async
     company
     vundo
     ;;diminish
@@ -48,6 +47,9 @@
     winum
     gcmh
     magit
+    orderless
+    consult
+    vertico
     yasnippet)
   "Packages installed by `gavin/bootstrap-packages'.")
 
@@ -194,6 +196,7 @@
   (savehist-mode))
 
 (use-package orderless
+  :ensure t
   :demand t
   :config
   (defun +orderless--consult-suffix ()
