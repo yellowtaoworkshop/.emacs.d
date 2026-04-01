@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: license
+# key: lic
+# --
+
+/*****************************************************************************
+*                                                                            *
+* Copyright (c) ${1:`(format-time-string "%Y")`} ${2:Your Company}. All rights reserved.      *
+*                                                                            *
+* Proprietary and Confidential.                                              *
+*                                                                            *
+*****************************************************************************/

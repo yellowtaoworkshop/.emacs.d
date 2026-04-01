@@ -1,7 +1,6 @@
 *.o
 *.dat
 *~
-custom.el
 elpa/
 auto-save-list/
 eshell/
@@ -11,12 +10,31 @@ srecode-map.el
 .mc-lists.el
 session.*
 \#*
-ido.last
 smex-items
-recentf
-
-# ignore custom settings
-custom.el
 eln-cache
-custom.el 
+
+# Sensitive files - contain paths, project names, history
+custom.el
+ido.last
+recentf
+history
+bookmarks
+projectile-bookmarks.eld
+projects
+tramp
+.lsp-session-v1
+
+# Agent shell transcripts - may contain sensitive conversations
 /.agent-shell/
+/agent/
+
+# Backup files
+*.backup
+*.bak
+*.back
+
+# Tree-sitter compiled libraries
+tree-sitter/*.so
+
+# Test files
+test.sv
