@@ -22,7 +22,7 @@
 (setq make-backup-files nil)
 
 ;;
-(setq recentf-max-menu-items 25)
+(setq recentf-max-menu-items 10)
 (add-hook 'emacs-startup-hook
           (lambda ()
             (recentf-mode 1)))

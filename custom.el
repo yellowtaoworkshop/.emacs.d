@@ -215,13 +215,14 @@
    '("~/Documents/Org/workGtd.org" "~/Documents/Org/learnGtd.org"))
  '(package-native-compile t)
  '(package-selected-packages
-   '(company consult consult-yasnippet expand-region f gcmh goto-chg
-             highlight-numbers highlight-parentheses hl-todo ht
-             lsp-mode magit marginalia markdown-mode moe-theme
-             nerd-icons-dired nerd-icons-ibuffer nerd-icons-mode-line
-             orderless org-beautify-theme org-bullets p4 popup popwin
-             projectile smartparens spinner undo-tree verilog-ext
-             vertico vterm-toggle vundo winum))
+   '(agent-shell company consult consult-yasnippet expand-region f gcmh
+                 goto-chg highlight-numbers highlight-parentheses
+                 hl-todo ht lsp-mode magit marginalia markdown-mode
+                 moe-theme nerd-icons-dired nerd-icons-ibuffer
+                 nerd-icons-mode-line orderless org-beautify-theme
+                 org-bullets p4 popup popwin projectile smartparens
+                 spinner undo-tree verilog-ext vertico vterm-toggle
+                 vundo winum))
  '(package-vc-selected-packages
    '((nerd-icons-mode-line :url
                            "https://github.com/grolongo/nerd-icons-mode-line")
@@ -244,8 +245,6 @@
  '(tool-bar-mode nil)
  '(undo-tree-auto-save-history nil)
  '(use-file-dialog nil)
- '(use-package-minimum-reported-time 0.001)
- '(use-package-verbose nil)
  '(vc-annotate-background nil)
  '(vc-annotate-background-mode nil)
  '(vc-annotate-color-map
