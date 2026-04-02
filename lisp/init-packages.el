@@ -15,6 +15,7 @@
 
 (setq package-check-signature nil)
 
+
 (require 'cl-lib)
 
 ;; ...
@@ -71,15 +72,17 @@
   (message "Package setup skipped. Run M-x gavin/bootstrap-packages to install dependencies."))
 
 (setq use-package-always-ensure t
-      use-package-expand-minimally t
-      use-package-verbose nil)
+      use-package-expand-minimally t)
 
 (use-package highlight-parentheses
-  :hook ((prog-mode . highlight-parentheses-mode)
-         (emacs-lisp-mode . highlight-parentheses-mode)))
+  :hook ((prog-mode . highlight-parentheses-mode)))
+
 
 (use-package highlight-numbers
-  :hook (prog-mode . highlight-numbers-mode))
+  ;;  :commands (highlight-numbers-mode)
+  :hook (prog-mode . highlight-numbers-mode)
+  )
+
 
 ;;(use-package hungry-delete
 ;;  :hook (emacs-startup . global-hungry-delete-mode))
@@ -105,7 +108,7 @@
 ;; smartparens enable
 (use-package smartparens
   :defer t
-  :hook (prog-mode text-mode markdown-mode)
+  :hook (text-mode)
   :ensure t
   :config
   (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
@@ -117,8 +120,6 @@
   :hook (emacs-startup . popwin-mode))
 
 (use-package yasnippet
-  :config
-  (yas-reload-all)
   :hook (prog-mode . yas-minor-mode))
 
 (use-package vundo
@@ -365,10 +366,10 @@
   :config
   (setq winum-auto-setup-mode-line t))
 
-(use-package p4
-  :vc (:url  "https://github.com/JohnC32/perforce-emacs")
-  :after prog-mode
-  )
+;;(use-package p4
+;;  :vc (:url  "https://github.com/JohnC32/perforce-emacs")
+;;  :after prog-mode
+;;  )
 
 (use-package vterm
   :defer t

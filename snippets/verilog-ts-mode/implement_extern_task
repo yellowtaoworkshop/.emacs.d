@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: implement_extern_task
+# key: iet
+# --
+
+// ====================================================================================================
+// Name  : ${1:task_name}
+// Desc  : ${2:description}
+// Return: NA
+// ====================================================================================================
+task ${3:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`}::$1(${4:});
+  $0
+endtask // $1

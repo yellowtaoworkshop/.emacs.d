@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: implement_extern_new function
+# key: ien
+# --
+
+// ====================================================================================================
+// Name  : new
+// Desc  : ${1:description}
+// Param : ${2:string name=""}
+// ====================================================================================================
+function ${3:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`}::new(${2});
+  $0
+endfunction // new

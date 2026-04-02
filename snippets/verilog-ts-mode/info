@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: uvm_info
+# key: uinfo
+# --
+
+\`uvm_info(${1:MSG_ID}, $sformatf(${2:STRING}), UVM_${3:$$(yas-choose-value '("LOW" "MEDIUM" "HIGH" "DEBUG" "FULL"))})

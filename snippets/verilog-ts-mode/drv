@@ -1,0 +1,31 @@
+# -*- mode: snippet -*-
+# name: driver
+# key: drv
+# --
+
+class ${1:driver_name} extends uvm_driver #(${2:item_name});
+
+    \`uvm_component_utils($1)
+
+    virtual ${3:interface_name} vif;
+
+    function new(string name, uvm_component parent);
+        super.name(name, parent);
+    endfunction // new
+
+    function void build_phase(uvm_phase phase);
+        super.build_phase(phase);
+	if (vif == null) begin
+	    uvm_config_db #(virtual $3)::get(this, "", "vif", vif);
+        end
+
+	if( vif == null) begin
+	    \`uvm_error(get_type_name, "You didn't set the vif for $1")
+	end
+    endfunction //build_phase	
+	
+    task run_phase(uvm_phase phase);
+        $0
+    endtask //run_phase
+
+endclass //$1
