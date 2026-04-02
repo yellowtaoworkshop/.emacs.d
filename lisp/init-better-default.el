@@ -22,17 +22,26 @@
 (setq make-backup-files nil)
 
 ;;
-(setq recentf-max-menu-items 25)
+(setq recentf-max-menu-items 50)
+(setq recentf-auto-cleanup 'never)
+(setq recentf-exclude '("/tmp/" "/ssh:" "/sudo:" 'file-remote-p))
 (add-hook 'emacs-startup-hook
           (lambda ()
             (recentf-mode 1)))
+
+;; Speed up file opening by preventing synchronous VC (Git) checks
+(setq vc-handled-backends nil)
 
 ;; make the selection part can be deleted when insert
 (delete-selection-mode 1)
 
 (add-hook 'before-save-hook 'time-stamp)
 
-(add-hook 'emacs-startup-hook 'global-auto-revert-mode)
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (setq auto-revert-avoid-polling t)
+            (setq auto-revert-verbose nil)
+            (global-auto-revert-mode 1)))
 
 ;;
 (provide 'init-better-default)

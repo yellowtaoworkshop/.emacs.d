@@ -183,13 +183,15 @@
 
 ;; Enable Vertico.
 (use-package vertico
+  :demand t
   ;;:custom
   ;; (vertico-scroll-margin 0) ;; Different scroll margin
   ;; (vertico-count 20) ;; Show more candidates
   ;; (vertico-resize t) ;; Grow and shrink the Vertico minibuffer
   ;; (vertico-cycle t) ;; Enable cycling for `vertico-next/previous'
   ;;:init
-  :hook (emacs-startup . vertico-mode))
+  ;:hook (emacs-startup . vertico-mode))
+  )
 
 ;; Persist history over Emacs restarts. Vertico sorts by history position.
 (use-package savehist
@@ -197,7 +199,6 @@
   (savehist-mode))
 
 (use-package orderless
-  :ensure t
   :demand t
   :config
   (defun +orderless--consult-suffix ()
@@ -249,6 +250,7 @@
   ;; Bind `marginalia-cycle' locally in the minibuffer.  To make the binding
   ;; available in the *Completions* buffer, add it to the
   ;; `completion-list-mode-map'.
+  :demand t
   :bind (:map minibuffer-local-map
          ("M-A" . marginalia-cycle))
   ;; The :init section is always executed.
