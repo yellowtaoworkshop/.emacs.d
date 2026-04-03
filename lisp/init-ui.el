@@ -31,7 +31,7 @@
     ;; disable the menu bar and load the dark theme
     (menu-bar-mode 0)
     (condition-case nil
-        (load-theme  'moe-dark t)
+        (load-theme  'zenburn t)
       (error nil))))
   
  

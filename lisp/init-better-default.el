@@ -24,7 +24,7 @@
 ;;
 (setq recentf-max-menu-items 50)
 (setq recentf-auto-cleanup 'never)
-(setq recentf-exclude '("/tmp/" "/ssh:" "/sudo:" 'file-remote-p))
+(setq recentf-exclude '("/tmp/" "/slowfs" "/ssh:" "/sudo:" 'file-remote-p))
 (add-hook 'emacs-startup-hook
           (lambda ()
             (recentf-mode 1)))
