@@ -107,7 +107,9 @@
  '(current-language-environment "UTF-8")
  '(custom-enabled-themes nil)
  '(custom-safe-themes
-   '("5a4cdc4365122d1a17a7ad93b6e3370ffe95db87ed17a38a94713f6ffe0d8ceb"
+   '("aeb5508a548f1716142142095013b6317de5869418c91b16d75ce4043c35eb2b"
+     "f654d73d7a0761cc4f7d99fffe4b16fce1b2d95844f37bc786e455cec744ac75"
+     "5a4cdc4365122d1a17a7ad93b6e3370ffe95db87ed17a38a94713f6ffe0d8ceb"
      "f1b2de4bc88d1120782b0417fe97f97cc9ac7c5798282087d4d1d9290e3193bb"
      "0ee15d9d6ea7ac4516368884c4a4bb740c96d2054e9b0c2b0a68698a35d4438a"
      "3aa51468052c1e3e21dd41a3fa40c0161e07ca600683e3d96f1bca70f36749e2"
@@ -226,7 +228,7 @@
                          org-beautify-theme org-bullets p4 popup
                          popwin projectile smartparens spinner
                          undo-tree verilog-ext vertico vterm-toggle
-                         vundo winum))
+                         vundo winum zenburn-theme))
  '(package-vc-selected-packages
    '((nerd-icons-mode-line :url
                            "https://github.com/grolongo/nerd-icons-mode-line")

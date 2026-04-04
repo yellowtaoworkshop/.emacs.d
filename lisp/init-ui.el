@@ -25,13 +25,14 @@
       ;; in case on that there is no theme
       (scroll-bar-mode 0)
       (condition-case nil
-          (load-theme 'moe-light t)
+          ;; (load-theme 'moe-light t)
+          (load-theme 'apropospriate-light t)
         (error nil)))
   (progn 
     ;; disable the menu bar and load the dark theme
     (menu-bar-mode 0)
     (condition-case nil
-        (load-theme  'zenburn t)
+        (load-theme  'apropospriate-dark t)
       (error nil))))
   
  
