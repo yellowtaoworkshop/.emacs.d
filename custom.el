@@ -219,8 +219,9 @@
    '("~/Documents/Org/workGtd.org" "~/Documents/Org/learnGtd.org"))
  '(package-native-compile t)
  '(package-selected-packages
-   '(apropospriate-theme company consult consult-yasnippet expand-region
-                         f gcmh goto-chg highlight-numbers
+   '(apropospriate-theme company consult consult-project-extra
+                         consult-yasnippet expand-region f gcmh
+                         goto-chg highlight-numbers
                          highlight-parentheses hl-todo ht lsp-mode
                          magit marginalia markdown-mode moe-theme
                          nerd-icons-dired nerd-icons-ibuffer
@@ -290,19 +291,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "JetBrainsMonoNL Nerd Font Propo" :foundry "JB" :slant normal :weight regular :height 128 :width normal))))
- '(company-preview ((t (:foreground "gray"))))
- '(company-preview-common ((t (:inherit nil :foreground "dim gray"))))
- '(company-scrollbar-bg ((t (:background "white"))) t)
- '(company-scrollbar-fg ((t (:background "gray"))) t)
- '(company-tooltip ((t (:background "dim gray" :foreground "white"))))
- '(company-tooltip-common ((t (:foreground "hot pink" :underline t))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-common :foreground "magenta"))))
- '(company-tooltip-scrollbar-thumb ((t (:background "gray"))))
- '(company-tooltip-scrollbar-track ((t (:background "white"))))
- '(company-tooltip-selection ((t (:inherit 'highlight :background "white" :foreground "magenta"))))
- '(cursor ((t (:background "magenta"))))
- '(custom-comment ((t (:foreground "dim gray"))))
- '(hl-line ((t nil)))
  '(org-level-1 ((t (:inherit outline-1 :height 1.5))))
  '(org-level-2 ((t (:inherit outline-2 :height 1.0))))
  '(org-level-3 ((t (:inherit outline-3 :height 1.0))))
